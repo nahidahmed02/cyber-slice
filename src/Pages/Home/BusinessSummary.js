@@ -17,13 +17,7 @@ const BusinessSummary = () => {
 
                     <span className='font-extrabold font-mono'>Success Rate</span>
                 </div>
-                <div className='flex flex-col items-center'>
-                    <span><FaGlobe className='text-6xl' /></span>
 
-                    <span className='text-3xl font-bold mt-2 text-green-700'>85</span>
-
-                    <span className='font-extrabold font-mono'>Countries We Are Serving</span>
-                </div>
                 <div className='flex flex-col items-center'>
                     <span><GrMoney className='text-6xl' /></span>
 
@@ -31,6 +25,15 @@ const BusinessSummary = () => {
 
                     <span className='font-extrabold font-mono'>Annual Revenue</span>
                 </div>
+
+                <div className='flex flex-col items-center'>
+                    <span><FaGlobe className='text-6xl' /></span>
+
+                    <span className='text-3xl font-bold mt-2 text-green-700'>85</span>
+
+                    <span className='font-extrabold font-mono'>Countries We Are Serving</span>
+                </div>
+
                 <div className='flex flex-col items-center'>
                     <span><MdRateReview className='text-6xl' /></span>
 
