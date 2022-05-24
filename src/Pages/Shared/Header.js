@@ -2,8 +2,8 @@ import React from 'react';
 
 const Header = () => {
     return (
-        <div>
-            <h2>header</h2>
+        <div class="navbar bg-base-100">
+            <a class="btn btn-ghost normal-case text-xl">daisyUI</a>
         </div>
     );
 };
