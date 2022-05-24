@@ -11,7 +11,7 @@ const Header = () => {
         <li><CustomLink to='/login'>Login</CustomLink></li>
     </>
     return (
-        <div className="navbar bg-base-100 bg-emerald-600">
+        <div className="navbar bg-base-100 bg-emerald-100">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -21,7 +21,7 @@ const Header = () => {
                         {navItems}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-3xl font-bold italic text-amber-400">Cyber Slice</a>
+                <a className="btn btn-ghost normal-case text-3xl font-bold font-serif italic text-amber-500">Cyber Slice</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
