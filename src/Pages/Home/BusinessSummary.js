@@ -7,7 +7,7 @@ import { MdRateReview } from 'react-icons/md';
 const BusinessSummary = () => {
     return (
         <div className='mt-8 mb-5 mx-20'>
-            <h2 className='text-center mb-11 text-3xl font-bold text-amber-500'>Business Summary</h2>
+            <h2 className='text-center mb-11 text-3xl font-bold font-serif text-amber-500'>Business Summary</h2>
             <div className='text-center grid grid-cols-2 lg:grid-cols-4 mb-9'>
 
                 <div className='flex flex-col items-center'>

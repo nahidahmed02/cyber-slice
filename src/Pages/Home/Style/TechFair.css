@@ -1,0 +1,18 @@
+/* -------- Media Queries --------*/
+
+/* Mobile Devices */
+
+@media only screen and (max-width: 688px) {
+    .tech-div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tech-title {
+        order: 2;
+    }
+
+    .tech-img {
+        order: 1;
+    }
+}
