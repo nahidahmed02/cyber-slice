@@ -45,6 +45,14 @@ const Blogs = () => {
                     </span>
                 </p>
             </div>
+
+            <div className='card-bordered rounded-xl bg-gray-200 lg:px-20 lg:py-4 mb-4'>
+                <h2 className='text-2xl font-bold text-red-500'>What is a unit test? Why should write unit tests?</h2>
+                <p className='text-xl font-bold mt-2'>A type of software testing, where individual units or components of a software are tested to validate that each unit of the software code performs as expected, is called UNIT TEST.
+                    <br />
+                    Unit testing helps developers write better code, more efficiently and saves time and money over the course of the product development life cycle. Unit test ensures the standard quality of all code before deploy. This ensures a reliable engineering environment where quality is paramount.
+                </p>
+            </div>
         </div>
     );
 };
