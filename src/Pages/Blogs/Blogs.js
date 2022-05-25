@@ -31,6 +31,20 @@ const Blogs = () => {
                     <br />
                     The ability to access object properties from another object is being referred by prototypical inheritance. JavaScript prototype add new properties and methods to an existing object constructor. Then JS code inherit properties from a prototype.</p>
             </div>
+
+            <div className='card-bordered rounded-xl bg-gray-200 lg:px-20 lg:py-4 mb-4'>
+                <h2 className='text-2xl font-bold text-red-500'>Why you do not set the state directly in React? For example, if you have const [products, setProducts] = useState([]). Why you do not set products = [...] instead, you use the setProducts</h2>
+                <p className='text-xl font-bold mt-2'>We should never set the state directly in React. Some reasons behind it-
+                    <br />
+                    <span className='ml-10'>If I set state directly, I will lose control of the state across all components.
+                    </span>
+                    <br />
+                    <span className='ml-10'>Setting the state directly does not change this.state immediately. Rather, it creates a pending state transition. This method will only return the present value when accessing it after calling.</span>
+                    <br />
+                    <span className='ml-10'>After setting the state directly, calling the setProducts() afterward may just replace the update I made.
+                    </span>
+                </p>
+            </div>
         </div>
     );
 };
