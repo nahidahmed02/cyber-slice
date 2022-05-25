@@ -14,7 +14,16 @@ const Blogs = () => {
                 </p>
             </div>
 
-
+            <div className='card-bordered rounded-xl bg-gray-200 lg:px-20 lg:py-4 mb-4'>
+                <h2 className='text-2xl font-bold text-red-500'>What are the different ways to manage a state in a React application?</h2>
+                <p className='text-xl font-bold mt-2'>Different ways to manage a state in a React application- <br />
+                    <span className='ml-10'>1. useReducer : To deal with complex state management the useReducer hook is a powerful provided React hook. It doesn't require third-party dependencies.</span>
+                    <br />
+                    <span className='ml-10'>2. Custom Hooks: To encompass complex logic into a single accessible hook custom React hooks are very handy. This can be pretty effective for forms, toggles, asynchronous behavior.</span>
+                    <br />
+                    <span className='ml-10'>3. Data Fetching Libraries:   To fetch, cach, invalidate, and refresh data from external sources, data libraries like React Query is so effective</span>
+                </p>
+            </div>
         </div>
     );
 };
