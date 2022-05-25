@@ -24,6 +24,13 @@ const Blogs = () => {
                     <span className='ml-10'>3. Data Fetching Libraries:   To fetch, cach, invalidate, and refresh data from external sources, data libraries like React Query is so effective</span>
                 </p>
             </div>
+
+            <div className='card-bordered rounded-xl bg-gray-200 lg:px-20 lg:py-4 mb-4'>
+                <h2 className='text-2xl font-bold text-red-500'>How does prototypical inheritance work?</h2>
+                <p className='text-xl font-bold mt-2'>A feature in javascript which is used to add methods and properties in objects is called Prototypal Inheritance. An object can inherit the properties and methods of another object with this method. Object.getPrototypeOf and Object are being used to get and set the Prototype of an object.
+                    <br />
+                    The ability to access object properties from another object is being referred by prototypical inheritance. JavaScript prototype add new properties and methods to an existing object constructor. Then JS code inherit properties from a prototype.</p>
+            </div>
         </div>
     );
 };
