@@ -1,13 +1,33 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 import CustomLink from './CustomLink';
 
 const Header = () => {
+
+    const [user] = useAuthState(auth);
+
+    const logout = () => {
+        signOut(auth);
+    };
+
     const navItems = <>
         <li><CustomLink to='/'>Home</CustomLink></li>
-        <li><CustomLink to='/dashboard'>Dashboard</CustomLink></li>
+        {
+            user && <li><CustomLink to='/dashboard'>Dashboard</CustomLink></li>
+        }
+
         <li><CustomLink to='/blogs'>Blogs</CustomLink></li>
         <li><CustomLink to='/portfolio'>My Portfolio</CustomLink></li>
-        <li><CustomLink to='/login'>Login</CustomLink></li>
+
+        {
+            user
+                ?
+                <button onClick={logout} className="btn btn-ghost text-red-600 font-bold">Sign Out</button>
+                :
+                <li><CustomLink to='/login'>Login</CustomLink></li>
+        }
     </>
     return (
         <div className="navbar bg-emerald-100">
@@ -27,7 +47,6 @@ const Header = () => {
                     {navItems}
                 </ul>
             </div>
-
         </div>
     );
 };
