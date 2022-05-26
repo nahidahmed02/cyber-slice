@@ -3,10 +3,14 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import CustomLink from './CustomLink';
+import { FaUserCircle } from 'react-icons/fa';
+
 
 const Header = () => {
 
     const [user] = useAuthState(auth);
+
+    // console.log(user.auth);
 
     const logout = () => {
         signOut(auth);
@@ -28,6 +32,8 @@ const Header = () => {
                 :
                 <li><CustomLink to='/login'>Login</CustomLink></li>
         }
+
+
     </>
     return (
         <div className="navbar bg-emerald-100">
@@ -47,6 +53,13 @@ const Header = () => {
                     {navItems}
                 </ul>
             </div>
+            {
+                user
+                    ?
+                    <li className='ml-3 font-bold italic'><FaUserCircle className='text-xl mr-2' /> {user.displayName}</li>
+                    :
+                    <li className='ml-3 font-bold italic'><FaUserCircle className='text-xl mr-2' /> Guest</li>
+            }
         </div>
     );
 };
