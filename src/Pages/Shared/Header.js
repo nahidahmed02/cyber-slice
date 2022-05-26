@@ -4,7 +4,6 @@ import CustomLink from './CustomLink';
 const Header = () => {
     const navItems = <>
         <li><CustomLink to='/'>Home</CustomLink></li>
-        <li><CustomLink to='/purchase'>Purchase</CustomLink></li>
         <li><CustomLink to='/dashboard'>Dashboard</CustomLink></li>
         <li><CustomLink to='/blogs'>Blogs</CustomLink></li>
         <li><CustomLink to='/portfolio'>My Portfolio</CustomLink></li>
