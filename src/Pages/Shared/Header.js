@@ -10,8 +10,6 @@ const Header = () => {
 
     const [user] = useAuthState(auth);
 
-    // console.log(user.auth);
-
     const logout = () => {
         signOut(auth);
     };
@@ -56,9 +54,9 @@ const Header = () => {
             {
                 user
                     ?
-                    <li className='ml-3 font-bold italic'><FaUserCircle className='text-xl mr-2' /> {user.displayName}</li>
+                    <li className='ml-24 lg:ml-3 font-bold italic'><FaUserCircle className='text-xl mr-2' /> {user.displayName}</li>
                     :
-                    <li className='ml-3 font-bold italic'><FaUserCircle className='text-xl mr-2' /> Guest</li>
+                    <li className='ml-24 lg:ml-3 font-bold italic'><FaUserCircle className='text-xl mr-2' /> Guest</li>
             }
         </div>
     );
