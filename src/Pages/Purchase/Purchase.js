@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useForm } from 'react-hook-form';
@@ -38,7 +38,7 @@ const Purchase = () => {
         <div className='mx-8 lg:mx-20 mb-8'>
             <h2 className='text-center my-8 text-3xl font-bold font-serif text-amber-500'>Purchase -<span className='text-violet-700 italic ml-1'> {part.name}</span> </h2>
             <div className='grid grid-cols-1 lg:grid-cols-2'>
-                <div className="card lg:w-96 bg-base-100 shadow-xl bg-sky-200">
+                <div className="card lg:w-96 shadow-xl bg-sky-200">
                     <figure className="px-10 pt-10">
                         <img src={part.photo} alt="" className="rounded-xl" />
                     </figure>
@@ -84,8 +84,8 @@ const Purchase = () => {
                                         <span className="label-text font-bold">Minimum Order Quantity {part.minOrder}</span>
                                     </label>
                                     <input {...register("quantity", { min: `${part.minOrder}`, max: `${part.available}` })} type="number" name="quantity" placeholder="Order Quantity" className='input input-bordered w-full max-w-xs' required />
-                                    {errors.quantity < 'min' && "Can't order less then the minimun order quantity"}
-                                    {errors.quantity > 'max' && "Can't order more then the available order quantity "}
+                                    {errors.quantity < 'min' && "Can't order less than the minimun order quantity"}
+                                    {errors.quantity > 'max' && "Can't order more than the available order quantity "}
                                 </div>
 
                                 <div className="form-control w-full max-w-xs">
