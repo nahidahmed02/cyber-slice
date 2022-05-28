@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { FcGoogle } from 'react-icons/fc';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import useToken from '../../hooks/useToken';
 import Loading from '../Shared/Loading';
 
 const SignUp = () => {
@@ -20,6 +21,8 @@ const SignUp = () => {
 
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
+    const [token] = useToken(user || gUser);
+
     const navigate = useNavigate();
 
     if (loading || gLoading || updating) {
@@ -31,7 +34,7 @@ const SignUp = () => {
         signInError = <p className='text-red-500'>{error?.message || gError?.message || updateError?.message}</p>
     }
 
-    if (user || gUser) {
+    if (token) {
         navigate('/');
     }
 
