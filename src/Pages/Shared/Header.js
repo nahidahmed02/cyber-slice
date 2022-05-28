@@ -44,7 +44,7 @@ const Header = () => {
                         {navItems}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-3xl font-bold font-serif italic text-amber-500">Cyber Slice</a>
+                <a className="btn btn-ghost normal-case text-3xl font-bold font-serif italic text-amber-500">Cyber<span className='text-red-500 ml-3'>  Slice</span></a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">

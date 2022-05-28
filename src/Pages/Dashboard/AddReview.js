@@ -2,7 +2,7 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useForm } from 'react-hook-form';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 const AddReview = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
@@ -50,12 +50,11 @@ const AddReview = () => {
                         <label className="label">
                             <span className="label-text font-bold">Ratings (1-5)</span>
                         </label>
-                        <input {...register("rating", { min: 0, max: 5 })} type="number" name="rating" placeholder="Rating" className='input input-bordered w-full max-w-xs' required />
-                        {errors.rating && "Rating should be between 0-5"}
+                        <input {...register("rating", { min: 1, max: 5 })} type="number" name="rating" placeholder="Rating" className='input input-bordered w-full max-w-xs' required />
+                        {errors.rating && "Rating should be between 1-5"}
                     </div>
                     <input type="submit" value="Send Review" className='btn btn-info w-full max-w-xs mt-4 mr-16' />
-                    {/* <div>
-                    </div> */}
+
                 </form>
             </div>
         </div>

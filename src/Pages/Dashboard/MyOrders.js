@@ -1,14 +1,57 @@
-import React from 'react';
-// import { useQuery } from 'react-query';
-// import { toast } from 'react-toastify';
+import React, { useState } from 'react';
+import { useQuery } from 'react-query';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import Loading from '../Shared/Loading';
+import OrderRow from './OrderRow';
+import DeleteConfirmModal from './DeleteConfirmModal';
 
 const MyOrders = () => {
-    // const { data: orders} = useQuery('orders', ()=> fetch('http://localhost:5000/review'))
-    //     .then(res=> res.json())
 
+    const [deleteOrder, setDeleteOrder] = useState(null);
+
+    const [user] = useAuthState(auth);
+    const email = user.email;
+
+    const { isLoading, data: order, refetch } = useQuery('order', () =>
+        fetch(`http://localhost:5000/order?email=${email}`)
+            .then(res => res.json()))
+
+    console.log(order);
+    if (isLoading) {
+        return <Loading></Loading>
+    }
     return (
         <div>
-            <h2>My Orders</h2>
+            <h2 className='text-center text-2xl font-bold font-serif text-violet-500 mt-6 mb-3'>{user.displayName}'s Order</h2>
+            <div className="overflow-x-auto">
+                <table className="table w-full">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Ordered Parts</th>
+                            <th>Quantity</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            order.map((ord, index) => <OrderRow
+                                key={ord._id}
+                                ord={ord}
+                                index={index}
+                                refetch={refetch}
+                                setDeleteOrder={setDeleteOrder}
+                            ></OrderRow>)
+                        }
+                    </tbody>
+                </table>
+            </div>
+            {deleteOrder && <DeleteConfirmModal
+                deleteOrder={deleteOrder}
+                refetch={refetch}
+                setDeleteOrder={setDeleteOrder}
+            ></DeleteConfirmModal>}
         </div>
     );
 };

@@ -76,7 +76,7 @@ const Purchase = () => {
                                     <label className="label">
                                         <span className="label-text">Parts Name</span>
                                     </label>
-                                    <input {...register("parts")} type="text" name="parts" value={part.name} className='input input-bordered w-full max-w-xs' readOnly />
+                                    <input {...register("parts")} type="text" name="parts" value={part.name} className='input input-bordered w-full max-w-xs' />
                                 </div>
 
                                 <div className="form-control w-full max-w-xs">

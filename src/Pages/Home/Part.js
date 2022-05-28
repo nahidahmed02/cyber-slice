@@ -20,7 +20,7 @@ const Part = ({ part }) => {
                 <p className='italic'><span className='font-bold'>Description</span>: {description}</p>
                 <p className='italic'><span className='font-bold'>Available Quantity</span>: {available}</p>
                 <p className='italic'><span className='font-bold'>Minimum Order Quantity</span>: {minOrder}</p>
-                <p className='italic'><span className='font-bold'>Price Per Unit</span>: {price}</p>
+                <p className='italic'><span className='font-bold'>Price Per Unit</span>: $ {price}</p>
                 <div className="card-actions justify-end">
                     <button onClick={() => handleNavigate(_id)} className="btn glass bg-white text-blue-500">Buy Now</button>
                 </div>
