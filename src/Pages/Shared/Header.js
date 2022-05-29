@@ -4,11 +4,15 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import CustomLink from './CustomLink';
 import { FaUserCircle } from 'react-icons/fa';
+import Loading from './Loading';
 
 
 const Header = () => {
 
-    const [user] = useAuthState(auth);
+    const [user, loading] = useAuthState(auth);
+    if (loading) {
+        return <Loading></Loading>
+    }
 
     const logout = () => {
         signOut(auth);

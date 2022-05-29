@@ -7,9 +7,9 @@ import { toast, ToastContainer } from 'react-toastify';
 
 
 const Purchase = () => {
-    const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const [part] = usePart();
     const [user] = useAuthState(auth);
+    const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
 
     const name = user.displayName;
@@ -17,7 +17,7 @@ const Purchase = () => {
 
 
     const onSubmit = data => {
-
+        console.log(data);
         const url = `http://localhost:5000/order`;
         fetch(url, {
             method: 'POST',
@@ -76,7 +76,7 @@ const Purchase = () => {
                                     <label className="label">
                                         <span className="label-text">Parts Name</span>
                                     </label>
-                                    <input {...register("parts")} type="text" name="parts" value={part.name} className='input input-bordered w-full max-w-xs' />
+                                    <input {...register("parts")} type="text" value={part.name} className='input input-bordered w-full max-w-xs' />
                                 </div>
 
                                 <div className="form-control w-full max-w-xs">

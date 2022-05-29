@@ -8,7 +8,7 @@ import useAdmin from '../../hooks/useAdmin';
 
 const Dashboard = () => {
     const [user] = useAuthState(auth);
-    const [admin] = useAdmin(auth);
+    const [admin] = useAdmin(user);
 
     return (
         <div className="drawer drawer-mobile">
@@ -26,7 +26,7 @@ const Dashboard = () => {
 
                     <li className='font-bold font-serif text-violet-700 lg:mt-1'><Link to="/dashboard">My Profile</Link></li>
                     {
-                        user && <>
+                        !admin && <>
                             <li className='font-bold font-serif text-violet-700'><Link to="/dashboard/myOrders">My Orders</Link></li>
                             <li className='font-bold font-serif text-violet-700'><Link to="/dashboard/addReview">Add a Review</Link></li>
                         </>
