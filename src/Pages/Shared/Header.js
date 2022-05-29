@@ -12,6 +12,7 @@ const Header = () => {
 
     const logout = () => {
         signOut(auth);
+        localStorage.removeItem('accessToken');
     };
 
     const navItems = <>
@@ -33,6 +34,15 @@ const Header = () => {
 
 
     </>
+    const currentUser = <>
+        {
+            user
+                ?
+                <li className='ml-24 lg:ml-3 font-bold italic'><FaUserCircle className='text-xl mr-2' /> {user.displayName}</li>
+                :
+                <li className='ml-24 lg:ml-3 font-bold italic'><FaUserCircle className='text-xl mr-2' /> Guest</li>
+        }
+    </>
     return (
         <div className="navbar bg-emerald-100">
             <div className="navbar-start">
@@ -51,13 +61,7 @@ const Header = () => {
                     {navItems}
                 </ul>
             </div>
-            {
-                user
-                    ?
-                    <li className='ml-24 lg:ml-3 font-bold italic'><FaUserCircle className='text-xl mr-2' /> {user.displayName}</li>
-                    :
-                    <li className='ml-24 lg:ml-3 font-bold italic'><FaUserCircle className='text-xl mr-2' /> Guest</li>
-            }
+            {currentUser}
         </div>
     );
 };

@@ -1,5 +1,4 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const DeleteConfirmModal = ({ deleteOrder, setDeleteOrder, refetch }) => {
