@@ -5,7 +5,7 @@ const PartsDeleteConfirm = ({ deleteProduct, setDeleteProduct, refetch }) => {
     const { _id } = deleteProduct;
 
     const handleDelete = () => {
-        fetch(`http://localhost:5000/parts/${_id}`, {
+        fetch(`https://hidden-fortress-98551.herokuapp.com/parts/${_id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

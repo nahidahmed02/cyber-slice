@@ -1,9 +1,45 @@
 import React from 'react';
+import { useQuery } from 'react-query';
+import Loading from '../Shared/Loading';
+import AllOrdersRow from './AllOrdersRow';
 
 const ManageAllOrders = () => {
+    const { isLoading, data: orders, refetch } = useQuery('orders', () =>
+        fetch(`https://hidden-fortress-98551.herokuapp.com/order`, {
+            method: 'GET',
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+            .then(res => res.json()))
+
+    if (isLoading) {
+        return <Loading></Loading>
+    }
     return (
         <div>
-            <h2>Manage All Orders</h2>
+            <h2 className='text-center text-2xl font-bold font-serif text-violet-500 mt-6 mb-3'>Manage All Orders</h2>
+
+            <div className="overflow-x-auto">
+                <table className="table w-full">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Client's Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            orders.map((order, index) => <AllOrdersRow
+                                key={order._id}
+                                order={order}
+                                index={index}
+                                refetch={refetch}
+                            ></AllOrdersRow>)
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 };

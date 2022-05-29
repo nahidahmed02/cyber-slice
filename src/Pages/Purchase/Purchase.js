@@ -18,7 +18,7 @@ const Purchase = () => {
 
     const onSubmit = data => {
         console.log(data);
-        const url = `http://localhost:5000/order`;
+        const url = `https://hidden-fortress-98551.herokuapp.com/order`;
         fetch(url, {
             method: 'POST',
             headers: {
