@@ -10,7 +10,7 @@ const useAdmin = user => {
         const email = user?.email;
 
         if (email) {
-            fetch(`https://hidden-fortress-98551.herokuapp.com/admin/${email}`, {
+            fetch(`https://cyber-slice-server.onrender.com/admin/${email}`, {
                 method: 'GET',
                 headers: {
                     'content-type': 'application/json',

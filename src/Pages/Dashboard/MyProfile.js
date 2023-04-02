@@ -16,7 +16,7 @@ const MyProfile = () => {
     const [profile, setProfile] = useState();
 
     useEffect(() => {
-        fetch(`https://hidden-fortress-98551.herokuapp.com/profile?email=${email}`)
+        fetch(`https://cyber-slice-server.onrender.com/profile?email=${email}`)
             .then(res => res.json())
             .then(data => setProfile(data))
     }, [])
@@ -33,7 +33,7 @@ const MyProfile = () => {
         const UpdatedUser = { name, email, location, education, linkedin };
 
         // send data to the server
-        const url = `https://hidden-fortress-98551.herokuapp.com/profile/${email}`;
+        const url = `https://cyber-slice-server.onrender.com/profile/${email}`;
         fetch(url, {
             method: 'PUT',
             headers: {

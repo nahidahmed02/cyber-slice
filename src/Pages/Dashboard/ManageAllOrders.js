@@ -5,7 +5,7 @@ import AllOrdersRow from './AllOrdersRow';
 
 const ManageAllOrders = () => {
     const { isLoading, data: orders, refetch } = useQuery('orders', () =>
-        fetch(`https://hidden-fortress-98551.herokuapp.com/order`, {
+        fetch(`https://cyber-slice-server.onrender.com/order`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

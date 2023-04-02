@@ -4,7 +4,7 @@ const useParts = () => {
     const [parts, setParts] = useState([]);
 
     useEffect(() => {
-        fetch('https://hidden-fortress-98551.herokuapp.com/parts')
+        fetch('https://cyber-slice-server.onrender.com/parts')
             .then(res => res.json())
             .then(data => setParts(data))
     }, [])

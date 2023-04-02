@@ -8,7 +8,7 @@ const ManageProducts = () => {
     const [deleteProduct, setDeleteProduct] = useState(null);
 
     const { isLoading, data: parts, refetch } = useQuery('parts', () =>
-        fetch(`https://hidden-fortress-98551.herokuapp.com/parts`, {
+        fetch(`https://cyber-slice-server.onrender.com/parts`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

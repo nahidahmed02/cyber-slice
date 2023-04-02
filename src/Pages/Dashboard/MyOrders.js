@@ -14,7 +14,7 @@ const MyOrders = () => {
     const email = user.email;
 
     const { isLoading, data: order, refetch } = useQuery('order', () =>
-        fetch(`https://hidden-fortress-98551.herokuapp.com/order?email=${email}`, {
+        fetch(`https://cyber-slice-server.onrender.com/order?email=${email}`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

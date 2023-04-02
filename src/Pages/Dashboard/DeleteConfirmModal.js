@@ -5,7 +5,7 @@ const DeleteConfirmModal = ({ deleteOrder, setDeleteOrder, refetch }) => {
     const { _id } = deleteOrder;
 
     const handleDelete = () => {
-        fetch(`https://hidden-fortress-98551.herokuapp.com/order/${_id}`, {
+        fetch(`https://cyber-slice-server.onrender.com/order/${_id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

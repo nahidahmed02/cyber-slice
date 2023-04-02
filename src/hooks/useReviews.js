@@ -4,7 +4,7 @@ const useReviews = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch('https://hidden-fortress-98551.herokuapp.com/reviews')
+        fetch('https://cyber-slice-server.onrender.com/reviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])

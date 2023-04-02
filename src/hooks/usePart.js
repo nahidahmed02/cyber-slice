@@ -6,7 +6,7 @@ const usePart = _id => {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`https://hidden-fortress-98551.herokuapp.com/parts/${id}`)
+        fetch(`https://cyber-slice-server.onrender.com/parts/${id}`)
             .then(res => res.json())
             .then(data => setPart(data))
     }, [])

@@ -18,7 +18,7 @@ const Purchase = () => {
 
     const onSubmit = data => {
         console.log(data);
-        const url = `https://hidden-fortress-98551.herokuapp.com/order`;
+        const url = `https://cyber-slice-server.onrender.com/order`;
         fetch(url, {
             method: 'POST',
             headers: {
