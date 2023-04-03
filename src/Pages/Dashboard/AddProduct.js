@@ -30,7 +30,7 @@ const AddProduct = () => {
 
     return (
         <div>
-            <h2 className='text-center text-2xl font-bold font-serif text-violet-500 mt-6 lg:mr-14'>Add A Product</h2>
+            <h2 className='underline text-center text-2xl font-bold font-serif text-violet-500 mt-6 lg:mr-14'>Add A Product</h2>
 
             <div className='flex mt-4 justify-center items-center mx-2 lg:mx-auto'>
                 <form className='text-center lg:w-96' onSubmit={handleSubmit(onSubmit)}>
@@ -77,7 +77,7 @@ const AddProduct = () => {
                         <input {...register("photo")} type="text" placeholder="Photo URL" className="input input-bordered w-full max-w-xs" required />
                     </div>
 
-                    <input type="submit" value="Add" className='btn btn-success w-full max-w-xs mt-4 mr-16' />
+                    <input type="submit" value="Add" className='btn btn-info text-white font-bold w-full max-w-xs mt-4 mr-16' />
 
                 </form>
             </div>

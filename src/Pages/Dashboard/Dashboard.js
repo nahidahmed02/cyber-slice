@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { CgMenuRound } from 'react-icons/cg';
 import useAdmin from '../../hooks/useAdmin';
+import CustomLink from '../Shared/CustomLink';
 
 
 const Dashboard = () => {
@@ -16,28 +17,28 @@ const Dashboard = () => {
             <div className="drawer-content">
                 <label htmlFor="dashboard-sidebar" className=" drawer-button lg:hidden"><CgMenuRound className='text-3xl' /></label>
 
-                <h2 className=' text-2xl font-bold font-serif text-amber-500 ml-6 my-6'>Dashboard</h2>
+                <h2 className='underline text-2xl font-bold font-serif text-amber-500 ml-6 my-6'>Dashboard</h2>
                 <Outlet></Outlet>
             </div>
-            <div className="drawer-side ">
+            <div className="drawer-side">
                 <label htmlFor="dashboard-sidebar" className="drawer-overlay"></label>
-                <ul className="bg-gray-100 menu p-4 overflow-y-auto w-48 text-base-content">
+                <ul className="bg-white menu p-4 overflow-y-auto w-48 text-base-content">
                     {/* <!-- Sidebar content here --> */}
 
-                    <li className='font-bold font-serif text-violet-700 lg:mt-1'><Link to="/dashboard">My Profile</Link></li>
+                    <li className='font-bold font-serif text-red-600 lg:mt-1'><CustomLink to="/dashboard">My Profile</CustomLink></li>
                     {
                         !admin && <>
-                            <li className='font-bold font-serif text-violet-700'><Link to="/dashboard/myOrders">My Orders</Link></li>
-                            <li className='font-bold font-serif text-violet-700'><Link to="/dashboard/addReview">Add a Review</Link></li>
+                            <li className='font-bold font-serif text-red-600'><CustomLink to="/dashboard/myOrders">My Orders</CustomLink></li>
+                            <li className='font-bold font-serif text-red-600'><CustomLink to="/dashboard/addReview">Add a Review</CustomLink></li>
                         </>
                     }
 
                     {
                         admin && <>
-                            <li className='font-bold font-serif text-violet-700'><Link to="/dashboard/manageAllOrders">Manage All Orders</Link></li>
-                            <li className='font-bold font-serif text-violet-700'><Link to="/dashboard/addProduct">Add A Product</Link></li>
-                            <li className='font-bold font-serif text-violet-700'><Link to="/dashboard/makeAdmin">Make Admin</Link></li>
-                            <li className='font-bold font-serif text-violet-700'><Link to="/dashboard/manageProducts">Manage Products</Link></li>
+                            <li className='font-bold font-serif text-red-600'><CustomLink to="/dashboard/manageAllOrders">Manage All Orders</CustomLink></li>
+                            <li className='font-bold font-serif text-red-600'><CustomLink to="/dashboard/addProduct">Add A Product</CustomLink></li>
+                            <li className='font-bold font-serif text-red-600'><CustomLink to="/dashboard/makeAdmin">Make Admin</CustomLink></li>
+                            <li className='font-bold font-serif text-red-600'><CustomLink to="/dashboard/manageProducts">Manage Products</CustomLink></li>
                         </>
                     }
 

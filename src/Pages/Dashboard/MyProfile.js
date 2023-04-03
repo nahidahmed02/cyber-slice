@@ -52,28 +52,28 @@ const MyProfile = () => {
 
     return (
         <div>
-            <h2 className='text-center text-2xl font-bold font-serif text-violet-500 mt-6'>{user.displayName}'s Profile</h2>
+            <h2 className='underline text-center text-2xl font-bold font-serif text-violet-500 mt-6 mb-3'>{user.displayName}'s Profile</h2>
 
-            <div className='my-3'>
-                <h2 className='text-center text-xl'>Name: {name} </h2>
-                <h2 className='text-center text-xl'>Email: {email} </h2>
-                <h2 className='text-center text-xl'>Education: {profile?.education} </h2>
-                <h2 className='text-center text-xl'>Location: {profile?.location} </h2>
-                <h2 className='text-center text-xl'>Phone: {profile?.phone} </h2>
-                <h2 className='text-center text-xl'>Linkedin Id: {profile?.linkedin} </h2>
+            <div className='mb-3 mx-64 px-24 py-10 rounded-md bg-sky-100'>
+                <h2 className='text-xl mb-1'><span className='font-semibold'>Name:</span> {name} </h2>
+                <h2 className='text-xl mb-1'><span className='font-semibold'>Email:</span> {email} </h2>
+                <h2 className='text-xl mb-1'><span className='font-semibold'>Education:</span> {profile?.education} </h2>
+                <h2 className='text-xl mb-1'><span className='font-semibold'>Location:</span> {profile?.location} </h2>
+                <h2 className='text-xl mb-1'><span className='font-semibold'>Phone:</span> {profile?.phone} </h2>
+                <h2 className='text-xl mb-1'><span className='font-semibold'>Linkedin Id:</span> {profile?.linkedin} </h2>
             </div>
 
-            <div className='text-center'>
-                <form onSubmit={handleUpdateUser}>
-                    <input type="text" name='education' placeholder='Education' required />
+            <div className='flex mt-4 justify-center items-center mx-2 lg:mx-auto'>
+                <form onSubmit={handleUpdateUser} className='text-center lg:w-96'>
+                    <input type="text" name='education' placeholder='Education' className='input input-bordered w-full max-w-xs' required />
                     <br />
-                    <input type="text" name='location' placeholder='Location' required />
+                    <input type="text" name='location' placeholder='Location' className='input input-bordered w-full max-w-xs mt-1' required />
                     <br />
-                    <input type="text" name='phone' placeholder='Phone' required />
+                    <input type="text" name='phone' placeholder='Phone' className='input input-bordered w-full max-w-xs mt-1' required />
                     <br />
-                    <input type="text" name='linkedin' placeholder='Linkedin Id' required />
+                    <input type="text" name='linkedin' placeholder='Linkedin Id' className='input input-bordered w-full max-w-xs mt-1' required />
                     <br />
-                    <input type="submit" value="Update User" className='btn btn-info' />
+                    <input type="submit" value="Update User" className='btn btn-sm btn-info text-white font-bold w-full max-w-xs mt-3' />
                 </form>
             </div>
 

@@ -36,7 +36,7 @@ const Purchase = () => {
 
     return (
         <div className='mx-8 lg:mx-20 mb-8'>
-            <h2 className='text-center my-8 text-3xl font-bold font-serif text-amber-500'>Purchase -<span className='text-violet-700 italic ml-1'> {part.name}</span> </h2>
+            <h2 className='underline text-center my-8 text-3xl font-bold font-serif text-amber-500'>Purchase -<span className='text-violet-700 italic ml-1'> {part.name}</span> </h2>
             <div className='grid grid-cols-1 lg:grid-cols-2'>
                 <div className="card lg:w-96 shadow-xl bg-sky-200">
                     <figure className="px-10 pt-10">

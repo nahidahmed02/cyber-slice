@@ -28,7 +28,7 @@ const MyOrders = () => {
     }
     return (
         <div>
-            <h2 className='text-center text-2xl font-bold font-serif text-violet-500 mt-6 mb-3'>{user.displayName}'s Order</h2>
+            <h2 className='underline text-center text-2xl font-bold font-serif text-violet-500 mt-6 mb-3'>{user.displayName}'s Order</h2>
             <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead>
