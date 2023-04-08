@@ -5,7 +5,7 @@ const DeleteConfirmModal = ({ deleteOrder, setDeleteOrder, refetch }) => {
     const { _id } = deleteOrder;
 
     const handleDelete = () => {
-        fetch(`https://cyber-slice-server.onrender.com/order/${_id}`, {
+        fetch(`http://localhost:5000/order/${_id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

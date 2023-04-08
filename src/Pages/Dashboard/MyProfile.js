@@ -7,71 +7,109 @@ import { toast } from 'react-toastify';
 
 const MyProfile = () => {
 
-    const { register, handleSubmit, reset } = useForm();
+    const { register, reset, handleSubmit } = useForm();
+
+    const [profile, setProfile] = useState();
+    const [education, setEducation] = useState('');
+    const [location, setLocation] = useState('');
+    const [phone, setPhone] = useState('');
+    const [linkedin, setLinkedin] = useState('');
 
     const [user] = useAuthState(auth);
     const name = user.displayName;
     const email = user.email;
 
-    const [profile, setProfile] = useState();
+
 
     useEffect(() => {
-        fetch(`https://cyber-slice-server.onrender.com/profile?email=${email}`)
+        fetch(`http://localhost:5000/profile/${email}`, {
+            headers: {
+                'content-type': 'application/json',
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            },
+        })
             .then(res => res.json())
-            .then(data => setProfile(data))
-    }, [])
+            .then(data => {
+                if (data.length > 0) {
+                    setProfile(data[0]);
+                    console.log('profile', data[0]);
+                    setEducation(data[0]?.education);
+                    setLocation(data[0]?.location);
+                    setPhone(data[0]?.phone);
+                    setLinkedin(data[0]?.linkedin);
+                }
+            })
+    }, [email])
 
-    const handleUpdateUser = event => {
+    const handleUpdateUser = (event) => {
         event.preventDefault();
 
-        const name = event.target.name.value;
-        const email = event.target.email.value;
-        const location = event.target.location.value;
-        const education = event.target.education.value;
-        const linkedin = event.target.linkedin.value;
-
-        const UpdatedUser = { name, email, location, education, linkedin };
+        const updatedProfile = { education, location, phone, linkedin };
+        console.log('updated', updatedProfile);
 
         // send data to the server
-        const url = `https://cyber-slice-server.onrender.com/profile/${email}`;
+        const url = `http://localhost:5000/profile/${email}`;
         fetch(url, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(UpdatedUser),
+            body: JSON.stringify(updatedProfile),
         })
             .then(res => res.json())
             .then(data => {
-                toast('Profile updated successfully');
+                toast('Profile update successfully');
+                fetch(`http://localhost:5000/profile/${email}`, {
+                    headers: {
+                        'content-type': 'application/json',
+                        authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                    },
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.length > 0) {
+                            setProfile(data[0]);
+                            console.log('profile', profile);
+                            setEducation(data[0].education);
+                            setLocation(data[0].location);
+                            setPhone(data[0].phone);
+                            setLinkedin(data[0].linkedin);
+                        }
+                    })
+                    .catch(error => {
+                        console.error(error);
+                        toast.error('Failed to get updated profile data');
+                    });
                 event.target.reset();
             })
+            .catch((error) => {
+                console.error(error);
+                toast.error('Failed to update profile')
+            })
     }
-
-
 
     return (
         <div>
             <h2 className='underline text-center text-2xl font-bold font-serif text-violet-500 mt-6 mb-3'>{user.displayName}'s Profile</h2>
 
-            <div className='mb-3 mx-64 px-24 py-10 rounded-md bg-sky-100'>
+            <div className='mb-3 mx-6 lg:mx-64 px-6 lg:px-24 py-4 lg:py-10 rounded-md bg-sky-100'>
                 <h2 className='text-xl mb-1'><span className='font-semibold'>Name:</span> {name} </h2>
                 <h2 className='text-xl mb-1'><span className='font-semibold'>Email:</span> {email} </h2>
-                <h2 className='text-xl mb-1'><span className='font-semibold'>Education:</span> {profile?.education} </h2>
-                <h2 className='text-xl mb-1'><span className='font-semibold'>Location:</span> {profile?.location} </h2>
-                <h2 className='text-xl mb-1'><span className='font-semibold'>Phone:</span> {profile?.phone} </h2>
-                <h2 className='text-xl mb-1'><span className='font-semibold'>Linkedin Id:</span> {profile?.linkedin} </h2>
+                <h2 className='text-xl mb-1'><span className='font-semibold'>Education:</span> {education} </h2>
+                <h2 className='text-xl mb-1'><span className='font-semibold'>Location:</span> {location} </h2>
+                <h2 className='text-xl mb-1'><span className='font-semibold'>Phone:</span> {phone} </h2>
+                <h2 className='text-xl mb-1'><span className='font-semibold'>Linkedin Id:</span> {linkedin} </h2>
             </div>
 
-            <div className='flex mt-4 justify-center items-center mx-2 lg:mx-auto'>
-                <form onSubmit={handleUpdateUser} className='text-center lg:w-96'>
-                    <input type="text" name='education' placeholder='Education' className='input input-bordered w-full max-w-xs' required />
+            <div className='flex mt-4 justify-center items-center mx-1 lg:mx-auto'>
+                <form onSubmit={handleUpdateUser} className='text-center w-96'>
+                    <input onChange={event => setEducation(event.target.value)} type="text" name='education' placeholder='Education' className='input input-bordered w-full max-w-xs' />
                     <br />
-                    <input type="text" name='location' placeholder='Location' className='input input-bordered w-full max-w-xs mt-1' required />
+                    <input onChange={event => setLocation(event.target.value)} type="text" name='location' placeholder='Location' className='input input-bordered w-full max-w-xs mt-1' />
                     <br />
-                    <input type="text" name='phone' placeholder='Phone' className='input input-bordered w-full max-w-xs mt-1' required />
+                    <input onChange={event => setPhone(event.target.value)} type="text" name='phone' placeholder='Phone' className='input input-bordered w-full max-w-xs mt-1' />
                     <br />
-                    <input type="text" name='linkedin' placeholder='Linkedin Id' className='input input-bordered w-full max-w-xs mt-1' required />
+                    <input onChange={event => setLinkedin(event.target.value)} type="text" name='linkedin' placeholder='Linkedin Id' className='input input-bordered w-full max-w-xs mt-1' />
                     <br />
                     <input type="submit" value="Update User" className='btn btn-sm btn-info text-white font-bold w-full max-w-xs mt-3' />
                 </form>

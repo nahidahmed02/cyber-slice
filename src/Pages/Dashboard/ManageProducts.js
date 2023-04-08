@@ -8,7 +8,7 @@ const ManageProducts = () => {
     const [deleteProduct, setDeleteProduct] = useState(null);
 
     const { isLoading, data: parts, refetch } = useQuery('parts', () =>
-        fetch(`https://cyber-slice-server.onrender.com/parts`, {
+        fetch(`http://localhost:5000/parts`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

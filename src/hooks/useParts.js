@@ -4,7 +4,7 @@ const useParts = () => {
     const [parts, setParts] = useState([]);
 
     useEffect(() => {
-        fetch('https://cyber-slice-server.onrender.com/parts')
+        fetch('http://localhost:5000/parts')
             .then(res => res.json())
             .then(data => setParts(data))
     }, [])

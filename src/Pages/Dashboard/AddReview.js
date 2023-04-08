@@ -11,7 +11,7 @@ const AddReview = () => {
     const name = user.displayName;
 
     const onSubmit = data => {
-        const url = `https://cyber-slice-server.onrender.com/review`;
+        const url = `http://localhost:5000/review`;
         fetch(url, {
             method: 'POST',
             headers: {

@@ -5,7 +5,7 @@ import AllOrdersRow from './AllOrdersRow';
 
 const ManageAllOrders = () => {
     const { isLoading, data: orders, refetch } = useQuery('orders', () =>
-        fetch(`https://cyber-slice-server.onrender.com/order`, {
+        fetch(`http://localhost:5000/order`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
