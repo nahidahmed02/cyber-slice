@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 
-
 const MyProfile = () => {
-
-    const { register, reset, handleSubmit } = useForm();
 
     const [profile, setProfile] = useState();
     const [education, setEducation] = useState('');
@@ -32,7 +28,6 @@ const MyProfile = () => {
             .then(data => {
                 if (data.length > 0) {
                     setProfile(data[0]);
-                    console.log('profile', data[0]);
                     setEducation(data[0]?.education);
                     setLocation(data[0]?.location);
                     setPhone(data[0]?.phone);
@@ -45,9 +40,8 @@ const MyProfile = () => {
         event.preventDefault();
 
         const updatedProfile = { education, location, phone, linkedin };
-        console.log('updated', updatedProfile);
 
-        // send data to the server
+        // send data to the server to update
         const url = `http://localhost:5000/profile/${email}`;
         fetch(url, {
             method: 'PUT',
@@ -59,28 +53,7 @@ const MyProfile = () => {
             .then(res => res.json())
             .then(data => {
                 toast('Profile update successfully');
-                fetch(`http://localhost:5000/profile/${email}`, {
-                    headers: {
-                        'content-type': 'application/json',
-                        authorization: `Bearer ${localStorage.getItem('accessToken')}`
-                    },
-                })
-                    .then(res => res.json())
-                    .then(data => {
-                        if (data.length > 0) {
-                            setProfile(data[0]);
-                            console.log('profile', profile);
-                            setEducation(data[0].education);
-                            setLocation(data[0].location);
-                            setPhone(data[0].phone);
-                            setLinkedin(data[0].linkedin);
-                        }
-                    })
-                    .catch(error => {
-                        console.error(error);
-                        toast.error('Failed to get updated profile data');
-                    });
-                event.target.reset();
+                setProfile(data[0])
             })
             .catch((error) => {
                 console.error(error);
