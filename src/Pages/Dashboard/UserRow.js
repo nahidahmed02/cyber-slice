@@ -48,9 +48,10 @@ const UserRow = ({ user, refetch, index }) => {
     }
 
     return (
-        <tr>
-            <th>{index + 1}</th>
-            <td>{email}</td>
+        <tr className='text-center'>
+            <th>{index + 1}.</th>
+            <td className={`italic ${role === 'admin' ? 'bg-blue-200' : ''}`}>{email}</td>
+            <td className='italic font-semibold text-sm'>{role === 'admin' ? 'ADMIN' : 'USER'}</td>
             <td>{role !== 'admin' ? <button onClick={makeAdmin} className="btn btn-xs btn-success">Make Admin</button> : <button onClick={removeAdmin} className="btn btn-xs btn-error text-white">Remove Admin</button>}</td>
         </tr>
     );

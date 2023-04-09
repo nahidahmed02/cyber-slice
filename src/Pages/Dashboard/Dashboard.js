@@ -37,7 +37,7 @@ const Dashboard = () => {
                         admin && <>
                             <li className='font-bold font-serif text-red-600'><CustomLink to="/dashboard/manageAllOrders">Manage Orders</CustomLink></li>
                             <li className='font-bold font-serif text-red-600'><CustomLink to="/dashboard/addProduct">Add A Product</CustomLink></li>
-                            <li className='font-bold font-serif text-red-600'><CustomLink to="/dashboard/makeAdmin">Make Admin</CustomLink></li>
+                            <li className='font-bold font-serif text-red-600'><CustomLink to="/dashboard/makeAdmin">Manage Admin</CustomLink></li>
                             <li className='font-bold font-serif text-red-600'><CustomLink to="/dashboard/manageProducts">Manage Products</CustomLink></li>
                         </>
                     }

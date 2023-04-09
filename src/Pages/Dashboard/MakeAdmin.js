@@ -16,14 +16,15 @@ const MakeAdmin = () => {
     }
     return (
         <div>
-            <h2 className='underline text-center text-2xl font-bold font-serif text-violet-500 mt-6 mb-3 lg:mr-14'>Make Admin</h2>
+            <h2 className='underline text-center text-2xl font-bold font-serif text-violet-500 mt-6 mb-3 lg:mr-14'>Manage Admin</h2>
             <div className="overflow-x-auto mx-28">
                 <table className="table w-full">
                     <thead>
-                        <tr>
-                            <th></th>
+                        <tr className='text-center'>
+                            <th>S. No</th>
                             <th>Email</th>
                             <th>Role</th>
+                            <th>Switch</th>
                         </tr>
                     </thead>
                     <tbody>
