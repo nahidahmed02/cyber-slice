@@ -23,7 +23,7 @@ const ManageProducts = () => {
         <div>
             <h2 className='underline text-center text-2xl font-bold font-serif text-violet-500 mt-6 mb-3'>Manage Products</h2>
 
-            <div className="overflow-x-auto mx-28">
+            <div className="overflow-x-auto mx-8 lg:mx-28">
                 <table className="table w-full">
                     <thead>
                         <tr>

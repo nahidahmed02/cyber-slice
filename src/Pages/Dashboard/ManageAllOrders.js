@@ -18,9 +18,9 @@ const ManageAllOrders = () => {
     }
     return (
         <div>
-            <h2 className='underline text-center text-2xl font-bold font-serif text-violet-500 mt-6 mb-3'>Manage All Orders</h2>
+            <h2 className='underline text-center text-2xl font-bold font-serif text-violet-500 mt-6 mb-3'>Manage Orders</h2>
 
-            <div className="overflow-x-auto mx-12">
+            <div className="overflow-x-auto mx-4 lg:mx-28">
                 <table className="table w-full">
                     <thead>
                         <tr>

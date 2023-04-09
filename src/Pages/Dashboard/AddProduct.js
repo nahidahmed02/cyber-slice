@@ -32,52 +32,52 @@ const AddProduct = () => {
         <div>
             <h2 className='underline text-center text-2xl font-bold font-serif text-violet-500 mt-6 lg:mr-14'>Add A Product</h2>
 
-            <div className='flex mt-4 justify-center items-center mx-2 lg:mx-auto'>
-                <form className='text-center lg:w-96' onSubmit={handleSubmit(onSubmit)}>
+            <div className='flex mt-4 justify-center items-center '>
+                <form className='text-center w-96' onSubmit={handleSubmit(onSubmit)}>
 
-                    <div className="form-control w-full max-w-xs">
+                    <div className="form-control w-full max-w-xs mx-auto">
                         <label className="label">
                             <span className="label-text">Parts Name</span>
                         </label>
-                        <input {...register("name")} type="text" placeholder='Parts Name' className='input input-bordered w-full max-w-xs' required />
+                        <input {...register("name")} type="text" placeholder='Parts Name' className='input input-bordered w-full  mx-auto' required />
                     </div>
 
-                    <div className="form-control w-full max-w-xs">
+                    <div className="form-control w-full max-w-xs mx-auto">
                         <label className="label">
                             <span className="label-text">Description</span>
                         </label>
                         <textarea {...register("description")} type="text" placeholder="Description" className='input input-bordered w-full max-w-xs' required />
                     </div>
 
-                    <div className="form-control w-full max-w-xs">
+                    <div className="form-control w-full max-w-xs mx-auto">
                         <label className="label">
                             <span className="label-text font-bold">Price</span>
                         </label>
                         <input {...register("price")} type="number" placeholder="Price" className='input input-bordered w-full max-w-xs' required />
                     </div>
 
-                    <div className="form-control w-full max-w-xs">
+                    <div className="form-control w-full max-w-xs mx-auto">
                         <label className="label">
                             <span className="label-text font-bold">Available Quantity</span>
                         </label>
                         <input {...register("available")} type="number" placeholder="Available Quantity" className='input input-bordered w-full max-w-xs' required />
                     </div>
 
-                    <div className="form-control w-full max-w-xs">
+                    <div className="form-control w-full max-w-xs mx-auto">
                         <label className="label">
                             <span className="label-text font-bold">Minimum Order</span>
                         </label>
                         <input {...register("minOrder")} type="number" placeholder="Minimum Order" className='input input-bordered w-full max-w-xs' required />
                     </div>
 
-                    <div className="form-control w-full max-w-xs">
+                    <div className="form-control w-full max-w-xs mx-auto">
                         <label className="label">
                             <span className="label-text">Photo</span>
                         </label>
                         <input {...register("photo")} type="text" placeholder="Photo URL" className="input input-bordered w-full max-w-xs" required />
                     </div>
 
-                    <input type="submit" value="Add" className='btn btn-info text-white font-bold w-full max-w-xs mt-4 mr-16' />
+                    <input type="submit" value="Add" className='btn btn-info btn-sm text-white font-bold w-full max-w-xs mt-4' />
 
                 </form>
             </div>

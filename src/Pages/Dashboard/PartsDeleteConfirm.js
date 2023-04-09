@@ -26,7 +26,7 @@ const PartsDeleteConfirm = ({ deleteProduct, setDeleteProduct, refetch }) => {
                 <div className="modal-box">
                     <h3 className="font-bold text-lg text-red-500">Are you sure ?</h3>
                     <div className="modal-action">
-                        <button onClick={() => handleDelete()} className="btn btn-xs btn-error">Confirm</button>
+                        <button onClick={() => handleDelete()} className="btn btn-xs btn-error text-white">Confirm</button>
                         <label htmlFor="delete-confirm-modal" className="btn btn-xs">Cancel</label>
                     </div>
                 </div>
