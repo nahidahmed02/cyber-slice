@@ -24,11 +24,34 @@ const UserRow = ({ user, refetch, index }) => {
                 }
             })
     }
+
+    const removeAdmin = () => {
+        fetch(`http://localhost:5000/admin/${email}`, {
+            method: 'PUT',
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+            .then(res => {
+                if (res.status === 403) {
+                    toast.error('Failed to remove admin role')
+                }
+                return res.json()
+            })
+            .then(data => {
+                console.log(data);
+                if (data && data.role !== 'admin') {
+                    toast.success('Successfully removed admin role');
+                    refetch();
+                }
+            })
+    }
+
     return (
         <tr>
             <th>{index + 1}</th>
             <td>{email}</td>
-            <td>{role !== 'admin' ? <button onClick={makeAdmin} className="btn btn-xs btn-success">Make Admin</button> : <span className='font-bold text-sm ml-5 italic'>ADMIN</span>}</td>
+            <td>{role !== 'admin' ? <button onClick={makeAdmin} className="btn btn-xs btn-success">Make Admin</button> : <button onClick={removeAdmin} className="btn btn-xs btn-error text-white">Remove Admin</button>}</td>
         </tr>
     );
 };
