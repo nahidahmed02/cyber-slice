@@ -8,6 +8,7 @@ const MyPortfolio = () => {
                 <div className="card-body px-4 lg:px-32">
                     <h2>Name: Nahid Ahmed</h2>
                     <p>Email: ahmednahid1995@gmail.com</p>
+                    <p>My <a href="https://itsnahid.netlify.app/" className='italic text-yellow-300'>Portfolio Website</a></p>
                     <br />
 
                     <p>Educational Background:</p>
