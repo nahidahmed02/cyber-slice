@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useForm } from 'react-hook-form';
@@ -9,8 +9,13 @@ import { toast, ToastContainer } from 'react-toastify';
 const Purchase = () => {
     const [part] = usePart();
     const [user] = useAuthState(auth);
-    const { register, formState: { errors }, handleSubmit, reset } = useForm();
-
+    const [orderedPart, setOrderedPart] = useState([]);
+    const {
+        register,
+        formState: { errors },
+        handleSubmit,
+        reset
+    } = useForm();
 
     const name = user.displayName;
     const email = user.email;
@@ -18,19 +23,23 @@ const Purchase = () => {
 
     const onSubmit = data => {
 
-        const url = `http://localhost:5000/order`;
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        })
-            .then(res => res.json())
-            .then(result => {
-                toast.success('Order placed successfully!')
-                reset()
-            })
+        // const url = `http://localhost:5000/order`;
+        // fetch(url, {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify(data),
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         setOrderedPart(data)
+        //         toast.success('Order placed successfully!')
+        //         reset()
+        //     })
+        // setOrderedPart(data)
+        console.log('data', data)
+        // console.log(orderedPart)
     };
 
 
@@ -90,6 +99,7 @@ const Purchase = () => {
                                         type="email"
                                         value={email}
                                         className='input input-bordered w-full max-w-xs'
+                                        lebel
                                         readOnly />
                                 </div>
 
@@ -99,9 +109,12 @@ const Purchase = () => {
                                     </label>
                                     <input
                                         {...register("parts")}
-                                        type="text"
+                                        name="parts"
                                         value={part.name}
-                                        className='input input-bordered w-full max-w-xs' />
+                                        className='input input-bordered w-full max-w-xs'
+                                        readOnly
+                                    />
+
                                 </div>
 
                                 <div className="form-control w-full max-w-xs">
@@ -114,7 +127,7 @@ const Purchase = () => {
                                         name="quantity"
                                         placeholder="Order Quantity"
                                         className='input input-bordered w-full max-w-xs'
-                                        required />
+                                    />
 
                                     {errors.quantity && errors.quantity.type === "min" && (
                                         <span className='text-error font-bold italic'>
@@ -139,7 +152,7 @@ const Purchase = () => {
                                         name='address'
                                         placeholder='Your Address'
                                         className='input input-bordered w-full max-w-xs'
-                                        required />
+                                    />
                                 </div>
 
                                 <div className="form-control w-full max-w-xs">
@@ -152,7 +165,7 @@ const Purchase = () => {
                                         name='phone'
                                         placeholder='Phone Number'
                                         className='input input-bordered w-full max-w-xs'
-                                        required />
+                                    />
                                 </div>
 
                                 {

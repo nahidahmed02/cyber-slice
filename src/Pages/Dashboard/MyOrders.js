@@ -14,18 +14,22 @@ const MyOrders = () => {
     const email = user.email;
 
     const { isLoading, data: order, refetch } = useQuery('order', () =>
-        fetch(`http://localhost:5000/order?email=${email}`, {
+        fetch(`http://localhost:5000/order/${email}`, {
             method: 'GET',
             headers: {
+                'content-type': 'application/json',
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
             }
         })
-            .then(res => res.json()))
+            .then(res => res.json())
+    )
 
     console.log(order);
+
     if (isLoading) {
         return <Loading></Loading>
     }
+
     return (
         <div>
             <h2 className='underline text-center text-2xl font-bold font-serif text-violet-500 mt-6 mb-3'>{user.displayName}'s Order</h2>
@@ -35,7 +39,7 @@ const MyOrders = () => {
                     <h2 className='text-center text-2xl font-bold mt-3'>Hey {user.displayName}! You didn't order anything!</h2>
                     :
                     <div>
-                        <div className="overflow-x-auto">
+                        <div className="overflow-x-auto mx-4 lg:mx-28">
                             <table className="table w-full">
                                 <thead>
                                     <tr>
@@ -47,7 +51,7 @@ const MyOrders = () => {
                                 </thead>
                                 <tbody>
                                     {
-                                        order.map((ord, index) => <OrderRow
+                                        order?.map((ord, index) => <OrderRow
                                             key={ord._id}
                                             ord={ord}
                                             index={index}
