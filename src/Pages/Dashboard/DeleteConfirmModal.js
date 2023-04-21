@@ -29,7 +29,7 @@ const DeleteConfirmModal = ({ deleteOrder, setDeleteOrder, refetch }) => {
                 <div className="modal-box">
                     <h3 className="font-bold text-lg text-red-500">Are you sure ?</h3>
                     <div className="modal-action">
-                        <button onClick={() => handleDelete(_id)} className="btn btn-xs btn-error">Yes</button>
+                        <button onClick={() => handleDelete()} className="btn btn-xs btn-error">Yes</button>
                         <label htmlFor="delete-confirm-modal" className="btn btn-xs">No</label>
                     </div>
                 </div>

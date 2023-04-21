@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useForm } from 'react-hook-form';
 import usePart from '../../hooks/usePart';
 import { toast, ToastContainer } from 'react-toastify';
+import { useParams } from 'react-router-dom';
 
 
 const Purchase = () => {
     const [part] = usePart();
     const [user] = useAuthState(auth);
-    const [orderedPart, setOrderedPart] = useState([]);
+
     const {
         register,
         formState: { errors },
@@ -20,26 +21,22 @@ const Purchase = () => {
     const name = user.displayName;
     const email = user.email;
 
-
     const onSubmit = data => {
+        data.parts = part.name;
 
-        // const url = `http://localhost:5000/order`;
-        // fetch(url, {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //     },
-        //     body: JSON.stringify(data),
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         setOrderedPart(data)
-        //         toast.success('Order placed successfully!')
-        //         reset()
-        //     })
-        // setOrderedPart(data)
-        console.log('data', data)
-        // console.log(orderedPart)
+        const url = `http://localhost:5000/order`;
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+            .then(res => res.json())
+            .then(data => {
+                toast.success('Order placed successfully!')
+                reset()
+            })
     };
 
 
@@ -86,7 +83,6 @@ const Purchase = () => {
                                         type="text"
                                         value={name}
                                         className='input input-bordered w-full max-w-xs'
-                                        lebel
                                         readOnly />
                                 </div>
 
@@ -99,7 +95,6 @@ const Purchase = () => {
                                         type="email"
                                         value={email}
                                         className='input input-bordered w-full max-w-xs'
-                                        lebel
                                         readOnly />
                                 </div>
 
@@ -109,6 +104,7 @@ const Purchase = () => {
                                     </label>
                                     <input
                                         {...register("parts")}
+                                        type="text"
                                         name="parts"
                                         value={part.name}
                                         className='input input-bordered w-full max-w-xs'
