@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useForm } from 'react-hook-form';
 import usePart from '../../hooks/usePart';
 import { toast, ToastContainer } from 'react-toastify';
-import { useParams } from 'react-router-dom';
-
 
 const Purchase = () => {
     const [part] = usePart();
@@ -167,9 +165,17 @@ const Purchase = () => {
                                 {
                                     (errors.quantity < 'min' || errors.quantity > 'max')
                                         ?
-                                        <input type="submit" value="Place Order" className='btn btn-info btn-sm text-white font-bold btn-disabled w-full max-w-xs mt-4' />
+                                        <input
+                                            type="submit"
+                                            value="Place Order"
+                                            className='btn btn-info btn-sm text-white font-bold btn-disabled w-full max-w-xs mt-4'
+                                        />
                                         :
-                                        <input type="submit" value="Place Order" className='btn btn-info btn-sm text-white font-bold w-full max-w-xs mt-4' />
+                                        <input
+                                            type="submit"
+                                            value="Place Order"
+                                            className='btn btn-info btn-sm text-white font-bold w-full max-w-xs mt-4'
+                                        />
                                 }
                             </form>
                         </div>
