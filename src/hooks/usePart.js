@@ -6,7 +6,7 @@ const usePart = _id => {
     const { id } = useParams();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/parts/${id}`)
+        fetch(`https://cyber-slice-server.onrender.com/parts/${id}`)
             .then(res => res.json())
             .then(data => setPart(data))
     }, [id])

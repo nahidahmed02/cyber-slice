@@ -18,7 +18,7 @@ const MyProfile = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/profile/${email}`, {
+        fetch(`https://cyber-slice-server.onrender.com/profile/${email}`, {
             headers: {
                 'content-type': 'application/json',
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -42,7 +42,7 @@ const MyProfile = () => {
         const updatedProfile = { education, location, phone, linkedin };
 
         // send data to the server to update
-        const url = `http://localhost:5000/profile/${email}`;
+        const url = `https://cyber-slice-server.onrender.com/profile/${email}`;
         fetch(url, {
             method: 'PUT',
             headers: {

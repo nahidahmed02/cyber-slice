@@ -7,7 +7,7 @@ const AddProduct = () => {
     const { register, handleSubmit, reset } = useForm();
 
     const onSubmit = data => {
-        fetch('http://localhost:5000/parts', {
+        fetch('https://cyber-slice-server.onrender.com/parts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

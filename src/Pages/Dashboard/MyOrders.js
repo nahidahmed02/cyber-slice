@@ -14,7 +14,7 @@ const MyOrders = () => {
     const email = user.email;
 
     const { isLoading, data: order, refetch } = useQuery('order', () =>
-        fetch(`http://localhost:5000/order/${email}`, {
+        fetch(`https://cyber-slice-server.onrender.com/order/${email}`, {
             method: 'GET',
             headers: {
                 'content-type': 'application/json',

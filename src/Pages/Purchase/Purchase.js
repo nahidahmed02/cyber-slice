@@ -22,7 +22,7 @@ const Purchase = () => {
     const onSubmit = data => {
         data.parts = part.name;
 
-        const url = `http://localhost:5000/order`;
+        const url = `https://cyber-slice-server.onrender.com/order`;
         fetch(url, {
             method: 'POST',
             headers: {
