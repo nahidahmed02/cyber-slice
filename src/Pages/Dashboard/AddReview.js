@@ -36,25 +36,51 @@ const AddReview = () => {
                         <label className="label">
                             <span className="label-text">Your Name</span>
                         </label>
-                        <input {...register("name")} type="text" value={name} className='input input-bordered w-full max-w-xs' lebel readOnly />
+
+                        <input
+                            {...register("name")}
+                            type="text"
+                            value={name}
+                            className='input input-bordered w-full max-w-xs'
+                            readOnly
+                        />
                     </div>
 
                     <div className="form-control w-full max-w-xs mx-auto">
                         <label className="label">
                             <span className="label-text">Your Feedback</span>
                         </label>
-                        <textarea {...register("feedback")} type="text" name="feedback" placeholder="Feedback" className='input input-bordered w-full max-w-xs' />
+
+                        <textarea
+                            {...register("feedback")}
+                            type="text"
+                            name="feedback"
+                            placeholder="Feedback"
+                            className='input input-bordered w-full max-w-xs'
+                        />
                     </div>
 
                     <div className="form-control w-full max-w-xs mx-auto">
                         <label className="label">
                             <span className="label-text font-bold">Ratings (1-5)</span>
                         </label>
-                        <input {...register("rating", { min: 1, max: 5 })} type="number" name="rating" placeholder="Rating" className='input input-bordered w-full max-w-xs' required />
+
+                        <input
+                            {...register("rating", { min: 1, max: 5 })}
+                            type="number"
+                            name="rating"
+                            placeholder="Rating"
+                            className='input input-bordered w-full max-w-xs'
+                            required
+                        />
                         {errors.rating && "Rating should be between 1-5"}
                     </div>
 
-                    <input type="submit" value="Send Review" className='btn btn-info btn-sm text-white font-bold w-full max-w-xs mt-4' />
+                    <input
+                        type="submit"
+                        value="Send Review"
+                        className='btn btn-info btn-sm text-white font-bold w-full max-w-xs mt-4'
+                    />
                 </form>
             </div>
         </div>

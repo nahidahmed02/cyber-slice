@@ -24,8 +24,6 @@ const MyOrders = () => {
             .then(res => res.json())
     )
 
-    console.log(order);
-
     if (isLoading) {
         return <Loading></Loading>
     }
@@ -35,7 +33,7 @@ const MyOrders = () => {
             <h2 className='underline text-center text-2xl font-bold font-serif text-violet-500 mt-6 mb-3'>{user.displayName}'s Order</h2>
 
             {
-                !order ?
+                order.length === 0 ?
                     <h2 className='text-center text-2xl font-bold mt-3'>Hey {user.displayName}! You didn't order anything!</h2>
                     :
                     <div>
