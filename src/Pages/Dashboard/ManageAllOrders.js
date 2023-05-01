@@ -23,9 +23,11 @@ const ManageAllOrders = () => {
             <div className="overflow-x-auto mx-4 lg:mx-28">
                 <table className="table w-full">
                     <thead>
-                        <tr>
-                            <th></th>
+                        <tr className='text-center'>
+                            <th>S. No</th>
                             <th>Client's Email</th>
+                            <th>Ordered Parts</th>
+                            <th>Quantity</th>
                         </tr>
                     </thead>
                     <tbody>

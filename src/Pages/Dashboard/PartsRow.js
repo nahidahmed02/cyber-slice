@@ -3,7 +3,7 @@ import React from 'react';
 const PartsRow = ({ part, index, setDeleteProduct }) => {
     const { name } = part;
     return (
-        <tr>
+        <tr className='text-center'>
             <th>{index + 1}</th>
             <td>{name}</td>
             <td>
