@@ -77,7 +77,7 @@ const UserRow = ({ user, refetch, index }) => {
                     <button
                         onClick={removeAdmin}
                         className={`btn btn-xs btn-error text-white 
-                        ${(email === 'ahmednahid1995@gmail.com' || email === 'nahid@gmail.com') && 'btn-disabled'}`}
+                        ${(email === 'ahmednahid1995@gmail.com' || email === 'nahid@gmail.com' || email === 'test02@gmail.com') && 'btn-disabled'}`}
                     >Remove Admin</button>
                 }
             </td>
