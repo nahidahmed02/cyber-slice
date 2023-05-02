@@ -3,6 +3,10 @@
 
 ## It's a full-stack website of a computer parts manufacturer. Where various kinds of computer parts will be found.
 
+## Admin Credentials
+Email: test02@gmail.com
+Password: 111222
+
 ## Feature
 
 * A logged in user can order
