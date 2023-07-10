@@ -1,5 +1,6 @@
 import React from 'react';
 import useReviews from '../../hooks/useReviews';
+import Loading from '../Shared/Loading';
 
 const Reviews = () => {
     const [reviews] = useReviews();
@@ -18,6 +19,9 @@ const Reviews = () => {
                             </tr>
                         </thead>
                         <tbody>
+                            {
+                                reviews?.length === 0 && <Loading></Loading>
+                            }
                             {
                                 reviews.map((review, index) => <tr key={review._id}>
                                     <th>{index + 1}</th>
