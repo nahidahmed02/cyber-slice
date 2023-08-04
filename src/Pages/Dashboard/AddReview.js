@@ -27,7 +27,7 @@ const AddReview = () => {
     };
     return (
         <div>
-            <h2 className='underline text-center text-2xl font-bold font-serif text-violet-500 mt-6 mb-3 lg:mr-14'>Add A Review</h2>
+            <h2 className='underline text-center text-2xl font-bold font-serif mt-6 mb-3 lg:mr-14' style={{ font: '#00214d' }}>Add A Review</h2>
 
             <div className='flex justify-center items-center '>
                 <form className='text-center w-96' onSubmit={handleSubmit(onSubmit)}>
