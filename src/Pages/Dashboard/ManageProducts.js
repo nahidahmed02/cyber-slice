@@ -22,12 +22,12 @@ const ManageProducts = () => {
 
     return (
         <div>
-            <h2 className='underline text-center text-2xl font-bold font-serif text-violet-500 mt-6 mb-3'>Manage Products</h2>
+            <h2 className='underline text-center text-2xl font-bold font-serif mt-6 mb-3' style={{ font: '#00214d' }}>Manage Products</h2>
 
             <div className="overflow-x-auto mx-8 lg:mx-72">
                 <table className="table w-full">
                     <thead>
-                        <tr className='text-center'>
+                        <tr className='text-center' style={{ color: '#00214d' }}>
                             <th>S. No</th>
                             <th>Parts</th>
                             <th>Action</th>

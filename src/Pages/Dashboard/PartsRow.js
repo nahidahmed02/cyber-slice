@@ -5,9 +5,9 @@ const PartsRow = ({ part, index, setDeleteProduct }) => {
 
     return (
         <tr className='text-center'>
-            <th>{index + 1}</th>
-            <td>{name}</td>
-            <td>
+            <th style={{ color: '#1b2d45', backgroundColor: '#fffffe' }}>{index + 1}</th>
+            <td style={{ color: '#1b2d45', backgroundColor: '#fffffe' }}>{name}</td>
+            <td style={{ color: '#1b2d45', backgroundColor: '#fffffe' }}>
                 <label
                     onClick={() => setDeleteProduct(part)}
                     htmlFor="delete-confirm-modal"
