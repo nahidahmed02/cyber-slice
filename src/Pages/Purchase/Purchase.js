@@ -49,17 +49,31 @@ const Purchase = () => {
             <div className='grid grid-cols-1 lg:grid-cols-2'>
 
                 {/* showing the part in a card */}
-                <div className="card lg:w-96 shadow-xl bg-sky-200">
+                <div className="card lg:w-96 shadow-xl" style={{ backgroundColor: '#fffffe' }}>
+
                     <figure className="px-10 pt-10">
                         <img src={part.photo} alt="" className="rounded-xl" />
                     </figure>
+
                     <div className="card-body items-start text-start">
-                        <h2 className="card-title font-bold font-serif ml-2">Name: {part.name}</h2>
-                        <p className='italic ml-2'><span className='font-bold'>Id</span>: {part._id}</p>
-                        <p className='italic ml-2'><span className='font-bold'>Description</span>: {part.description}</p>
-                        <p className='italic ml-2'><span className='font-bold'>Available Quantity</span>: {part.available}</p>
-                        <p className='italic ml-2'><span className='font-bold'>Minimum Order Quantity</span>: {part.minOrder}</p>
-                        <p className='italic ml-2'><span className='font-bold'>Price Per Unit</span>: {part.price}</p>
+
+                        <h2 className="card-title font-bold font-serif ml-2" style={{ color: '#00214d' }}>Name: {part.name}</h2>
+
+                        <p className='italic ml-2' style={{ color: '#1b2d45' }}>
+                            <span className='font-bold'>Id</span>: {part._id}
+                        </p>
+                        <p className='italic ml-2' style={{ color: '#1b2d45' }}>
+                            <span className='font-bold'>Description</span>: {part.description}
+                        </p>
+                        <p className='italic ml-2' style={{ color: '#1b2d45' }}>
+                            <span className='font-bold'>Available Quantity</span>: {part.available}
+                        </p>
+                        <p className='italic ml-2' style={{ color: '#1b2d45' }}>
+                            <span className='font-bold'>Minimum Order Quantity</span>: {part.minOrder}
+                        </p>
+                        <p className='italic ml-2' style={{ color: '#1b2d45' }}>
+                            <span className='font-bold'>Price Per Unit</span>: {part.price}
+                        </p>
                     </div>
                 </div>
 
@@ -121,6 +135,7 @@ const Purchase = () => {
                                         name="quantity"
                                         placeholder="Order Quantity"
                                         className='input input-bordered w-full max-w-xs'
+                                        required
                                     />
 
                                     {errors.quantity && errors.quantity.type === "min" && (
