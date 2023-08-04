@@ -30,10 +30,10 @@ const AddProduct = () => {
 
     return (
         <div>
-            <h2 className='underline text-center text-2xl font-bold font-serif text-violet-500 mt-6 lg:mr-14'>Add A Product</h2>
+            <h2 className='underline text-center text-2xl font-bold font-serif mt-6 lg:mr-14' style={{ font: '#00214d' }}>Add A Product</h2>
 
             <div className='flex mt-4 justify-center items-center '>
-                <form className='text-center w-96' onSubmit={handleSubmit(onSubmit)}>
+                <form className='text-center w-96 mb-6' onSubmit={handleSubmit(onSubmit)}>
 
                     <div className="form-control w-full max-w-xs mx-auto">
                         <label className="label">
