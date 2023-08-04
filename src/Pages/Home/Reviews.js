@@ -11,8 +11,8 @@ const Reviews = () => {
                 <div className="overflow-x-auto">
                     <table className="table w-full">
                         <thead>
-                            <tr>
-                                <th></th>
+                            <tr style={{ color: '#00214d' }}>
+                                <th>SL</th>
                                 <th>Name</th>
                                 <th>Rating</th>
                                 <th>Feedback</th>
@@ -24,10 +24,10 @@ const Reviews = () => {
                             }
                             {
                                 reviews.map((review, index) => <tr key={review._id}>
-                                    <th>{index + 1}</th>
-                                    <td>{review.name}</td>
-                                    <td>{review.rating}/5</td>
-                                    <td>{review.feedback}</td>
+                                    <th style={{ color: '#1b2d45' }}>{index + 1}</th>
+                                    <td style={{ color: '#1b2d45' }}>{review.name}</td>
+                                    <td style={{ color: '#1b2d45' }}>{review.rating}/5</td>
+                                    <td style={{ color: '#1b2d45' }}>{review.feedback}</td>
                                 </tr>)
                             }
                         </tbody>
