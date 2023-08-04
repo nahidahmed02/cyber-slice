@@ -17,7 +17,7 @@ const Dashboard = () => {
             <div className="drawer-content">
                 <label htmlFor="dashboard-sidebar" className="drawer-button cursor-pointer lg:hidden"><CgMenuRound className='text-3xl ml-4 mt-3' /></label>
 
-                <h2 className='underline text-2xl font-bold font-serif text-amber-500 ml-6 my-6'>Dashboard</h2>
+                <h2 className='underline text-2xl font-bold font-serif ml-6 my-6' style={{ font: '#00214d' }}>Dashboard</h2>
                 <Outlet></Outlet>
             </div>
             <div className="drawer-side mb-auto mt-14 lg:ml-3 rounded-md">

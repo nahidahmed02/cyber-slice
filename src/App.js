@@ -24,7 +24,7 @@ import Header from './Pages/Shared/Header';
 
 function App() {
   return (
-    <div className='bg-sky-50'>
+    <div style={{ backgroundColor: '#f2f4f6' }}>
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>

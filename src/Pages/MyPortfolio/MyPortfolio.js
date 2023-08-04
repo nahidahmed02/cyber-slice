@@ -3,7 +3,7 @@ import React from 'react';
 const MyPortfolio = () => {
     return (
         <div className='mx-8 lg:mx-20'>
-            <h2 className='text-center underline text-3xl font-bold font-serif text-amber-500 my-6'>My Portfolio</h2>
+            <h2 className='text-center underline text-3xl font-bold font-serif my-6' style={{ font: '#00214d' }}>My Portfolio</h2>
             <div className="card lg:mx-64 bg-neutral text-neutral-content">
                 <div className="card-body px-4 lg:px-32">
                     <h2>Name: Nahid Ahmed</h2>
