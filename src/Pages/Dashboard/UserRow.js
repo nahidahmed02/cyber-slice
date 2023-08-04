@@ -49,14 +49,16 @@ const UserRow = ({ user, refetch, index }) => {
 
     return (
         <tr className='text-center'>
-            <th>{index + 1}.</th>
+            <th style={{ color: '#1b2d45', backgroundColor: '#fffffe' }}>{index + 1}.</th>
 
             <td
-                className={`italic ${role === 'admin' ? 'bg-blue-200' : ''}`}>
+                style={{ color: '#1b2d45', backgroundColor: '#fffffe' }}
+                className='italic'>
                 {email}
             </td>
 
             <td
+                style={{ color: '#1b2d45', backgroundColor: '#fffffe' }}
                 className='italic font-semibold text-sm'>
                 {role === 'admin'
                     ?

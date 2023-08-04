@@ -19,12 +19,12 @@ const MakeAdmin = () => {
 
     return (
         <div>
-            <h2 className='underline text-center text-2xl font-bold font-serif text-violet-500 mt-6 mb-3 lg:mr-14'>Manage Admin</h2>
+            <h2 className='underline text-center text-2xl font-bold font-serif mt-6 mb-3 lg:mr-14' style={{ font: '#00214d' }}>Manage Admin</h2>
 
             <div className="overflow-x-auto mx-4 lg:mx-28">
                 <table className="table w-full">
                     <thead>
-                        <tr className='text-center'>
+                        <tr className='text-center' style={{ color: '#00214d' }}>
                             <th>S. No</th>
                             <th>Email</th>
                             <th>Role</th>
