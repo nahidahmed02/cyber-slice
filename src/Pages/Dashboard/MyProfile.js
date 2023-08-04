@@ -63,30 +63,82 @@ const MyProfile = () => {
 
     return (
         <div>
-            <h2 className='underline text-center text-2xl font-bold font-serif text-violet-500 mt-6 mb-3'>{user.displayName}'s Profile</h2>
+            <h2 className='underline text-center text-2xl font-bold font-serif mt-6 mb-8' style={{ font: '#00214d' }}>{user.displayName}'s Profile</h2>
 
-            <div className='mb-3 mx-6 lg:mx-64 px-6 lg:px-24 py-4 lg:py-10 rounded-md bg-sky-100'>
-                <h2 className='text-xl mb-1'><span className='font-semibold'>Name:</span> {name} </h2>
-                <h2 className='text-xl mb-1'><span className='font-semibold'>Email:</span> {email} </h2>
-                <h2 className='text-xl mb-1'><span className='font-semibold'>Education:</span> {education} </h2>
-                <h2 className='text-xl mb-1'><span className='font-semibold'>Location:</span> {location} </h2>
-                <h2 className='text-xl mb-1'><span className='font-semibold'>Phone:</span> {phone} </h2>
-                <h2 className='text-xl mb-1'><span className='font-semibold'>Linkedin Id:</span> {linkedin} </h2>
+            <div className='lg:flex'>
+                <div className='mb-3 mx-6 lg:mx-10 px-6 lg:px-20 py-4 lg:py-10 rounded-lg' style={{ backgroundColor: '#fffffe', color: '#1b2d45' }}>
+                    <h2 className='mb-1'>
+                        <span className='font-semibold'>Name:</span> {name}
+                    </h2>
+                    <h2 className='mb-1'>
+                        <span className='font-semibold'>Email:</span> {email}
+                    </h2>
+                    <h2 className='mb-1'>
+                        <span className='font-semibold'>Education:</span> {education}
+                    </h2>
+                    <h2 className='mb-1'>
+                        <span className='font-semibold'>Location:</span> {location}
+                    </h2>
+                    <h2 className='mb-1'>
+                        <span className='font-semibold'>Phone:</span> {phone}
+                    </h2>
+                    <h2 className='mb-1'>
+                        <span className='font-semibold'>Linkedin Id:</span> {linkedin}
+                    </h2>
+                </div>
+
+                <div className='flex my-6 lg:my-0 justify-center items-center mx-1'>
+
+                    <form onSubmit={handleUpdateUser} className='text-center w-96'>
+                        <input
+                            onChange={event => setEducation(event.target.value)}
+                            type="text"
+                            name='education'
+                            placeholder='Education'
+                            className='input input-bordered w-full max-w-xs'
+                        />
+
+                        <br />
+
+                        <input
+                            onChange={event => setLocation(event.target.value)}
+                            type="text"
+                            name='location'
+                            placeholder='Location'
+                            className='input input-bordered w-full max-w-xs mt-1'
+                        />
+
+                        <br />
+
+                        <input
+                            onChange={event => setPhone(event.target.value)}
+                            type="text"
+                            name='phone'
+                            placeholder='Phone'
+                            className='input input-bordered w-full max-w-xs mt-1'
+                        />
+
+                        <br />
+
+                        <input
+                            onChange={event => setLinkedin(event.target.value)}
+                            type="text"
+                            name='linkedin'
+                            placeholder='Linkedin Id'
+                            className='input input-bordered w-full max-w-xs mt-1'
+                        />
+
+                        <br />
+
+                        <input
+                            type="submit"
+                            value="Update User"
+                            className='btn btn-sm btn-info text-white font-bold w-full max-w-xs mt-3'
+                        />
+                    </form>
+                </div>
             </div>
 
-            <div className='flex mt-4 justify-center items-center mx-1 lg:mx-auto'>
-                <form onSubmit={handleUpdateUser} className='text-center w-96'>
-                    <input onChange={event => setEducation(event.target.value)} type="text" name='education' placeholder='Education' className='input input-bordered w-full max-w-xs' />
-                    <br />
-                    <input onChange={event => setLocation(event.target.value)} type="text" name='location' placeholder='Location' className='input input-bordered w-full max-w-xs mt-1' />
-                    <br />
-                    <input onChange={event => setPhone(event.target.value)} type="text" name='phone' placeholder='Phone' className='input input-bordered w-full max-w-xs mt-1' />
-                    <br />
-                    <input onChange={event => setLinkedin(event.target.value)} type="text" name='linkedin' placeholder='Linkedin Id' className='input input-bordered w-full max-w-xs mt-1' />
-                    <br />
-                    <input type="submit" value="Update User" className='btn btn-sm btn-info text-white font-bold w-full max-w-xs mt-3' />
-                </form>
-            </div>
 
         </div>
     );
