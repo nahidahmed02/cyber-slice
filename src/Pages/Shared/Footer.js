@@ -44,8 +44,8 @@ const Footer = () => {
 
             <div>
                 <p className='italic '>Copyright © 2025 - All right reserved by
-                    <span className='text-amber-500 font-semibold'>
-                        Cyber <span className='text-red-500'>Slice</span>
+                    <span className='text-amber-500 font-semibold ml-1'>
+                        Cyber <span className='text-red-500'> Slice</span>
                     </span>
                 </p>
             </div>
