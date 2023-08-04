@@ -30,18 +30,18 @@ const MyOrders = () => {
 
     return (
         <div>
-            <h2 className='underline text-center text-2xl font-bold font-serif text-violet-500 mt-6 mb-3'>{user.displayName}'s Order</h2>
+            <h2 className='underline text-center text-2xl font-bold font-serif mt-6 mb-3' style={{ font: '#00214d' }}>{user.displayName}'s Order</h2>
 
             {
                 order.length === 0 ?
-                    <h2 className='text-center text-2xl font-bold mt-3'>Hey {user.displayName}! You didn't order anything!</h2>
+                    <h2 className='text-center text-2xl font-bold mt-3' style={{ color: '#00214d' }}>Hey {user.displayName}! You didn't order anything!</h2>
                     :
                     <div>
                         <div className="overflow-x-auto mx-4 lg:mx-28">
                             <table className="table w-full">
                                 <thead>
-                                    <tr>
-                                        <th></th>
+                                    <tr style={{ color: '#00214d' }} className='text-center'>
+                                        <th>SL</th>
                                         <th>Ordered Parts</th>
                                         <th>Quantity</th>
                                         <th>Action</th>
