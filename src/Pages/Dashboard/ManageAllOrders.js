@@ -16,6 +16,7 @@ const ManageAllOrders = () => {
     if (isLoading) {
         return <Loading></Loading>
     }
+
     return (
         <div>
             <h2 className='underline text-center text-2xl font-bold font-serif text-violet-500 mt-6 mb-3'>Manage Orders</h2>
@@ -30,6 +31,7 @@ const ManageAllOrders = () => {
                             <th>Quantity</th>
                         </tr>
                     </thead>
+
                     <tbody>
                         {
                             orders.map((order, index) => <AllOrdersRow
@@ -42,6 +44,7 @@ const ManageAllOrders = () => {
                     </tbody>
                 </table>
             </div>
+
         </div>
     );
 };

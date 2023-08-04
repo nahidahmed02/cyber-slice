@@ -62,10 +62,12 @@ const Login = () => {
                     <form onSubmit={handleSubmit(onSubmit)}>
 
                         {/* email input field */}
+
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
+
                             <input
                                 type="email"
                                 placeholder="Your Email"
@@ -83,17 +85,33 @@ const Login = () => {
                             />
 
                             {/* handle errors for email */}
+
                             <label className="label">
-                                {errors.email?.type === 'required' && <span className="label-text-alt text-red-500 font-bold">{errors.email.message}</span>}
-                                {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-500 font-bold">{errors.email.message}</span>}
+                                {
+                                    errors.email?.type === 'required'
+                                    &&
+                                    <span className="label-text-alt text-red-500 font-bold">
+                                        {errors.email.message}
+                                    </span>
+                                }
+
+                                {
+                                    errors.email?.type === 'pattern'
+                                    &&
+                                    <span className="label-text-alt text-red-500 font-bold">
+                                        {errors.email.message}
+                                    </span>
+                                }
                             </label>
                         </div>
 
                         {/* password input field */}
+
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
+
                             <input
                                 type="password"
                                 placeholder="Your Password"
@@ -111,9 +129,23 @@ const Login = () => {
                             />
 
                             {/* handle errors for password */}
+
                             <label className="label">
-                                {errors.password?.type === 'required' && <span className="label-text-alt text-red-500 font-bold">{errors.password.message}</span>}
-                                {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500 font-bold">{errors.password.message}</span>}
+                                {
+                                    errors.password?.type === 'required'
+                                    &&
+                                    <span className="label-text-alt text-red-500 font-bold">
+                                        {errors.password.message}
+                                    </span>
+                                }
+
+                                {
+                                    errors.password?.type === 'minLength'
+                                    &&
+                                    <span className="label-text-alt text-red-500 font-bold">
+                                        {errors.password.message}
+                                    </span>
+                                }
                             </label>
                         </div>
 
@@ -121,19 +153,34 @@ const Login = () => {
                         {signInError}
 
                         {/* login button */}
-                        <input className="btn bg-green-600 w-full max-w-xs text-white" type="submit" value='Login' />
+                        <input
+                            className="btn bg-green-600 w-full max-w-xs text-white"
+                            type="submit"
+                            value='Login'
+                        />
                     </form>
 
 
-                    <p>Don't have an account? <Link className='text-blue-600' to='/signup'>Create a new account</Link></p>
+                    <p>Don't have an account?
+                        <Link
+                            className='text-blue-600'
+                            to='/signup'
+                        >
+                            Create a new account
+                        </Link>
+                    </p>
 
                     <div className="divider">OR</div>
 
                     {/* google login button */}
+
                     <button
                         onClick={() => signInWithGoogle()}
                         className="btn bg-white text-blue-600"
-                    > <FcGoogle className='text-xl mr-4' /> Continue With Google</button>
+                    >
+                        <FcGoogle className='text-xl mr-4' />
+                        Continue With Google
+                    </button>
                 </div>
             </div>
         </div>

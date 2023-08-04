@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AllOrdersRow = ({ order, index, setDeleteProduct }) => {
+const AllOrdersRow = ({ order, index }) => {
     const { email, parts, quantity } = order;
 
     return (

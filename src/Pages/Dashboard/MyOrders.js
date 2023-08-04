@@ -47,6 +47,7 @@ const MyOrders = () => {
                                         <th>Action</th>
                                     </tr>
                                 </thead>
+
                                 <tbody>
                                     {
                                         order?.map((ord, index) => <OrderRow
@@ -60,11 +61,13 @@ const MyOrders = () => {
                                 </tbody>
                             </table>
                         </div>
+
                         {deleteOrder && <DeleteConfirmModal
                             deleteOrder={deleteOrder}
                             refetch={refetch}
                             setDeleteOrder={setDeleteOrder}
                         ></DeleteConfirmModal>}
+
                     </div>
             }
 

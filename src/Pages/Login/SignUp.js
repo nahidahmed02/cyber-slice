@@ -54,10 +54,12 @@ const SignUp = () => {
                     <form onSubmit={handleSubmit(onSubmit)}>
 
                         {/* user name input field */}
+
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
                                 <span className="label-text">Name</span>
                             </label>
+
                             <input
                                 type="name"
                                 placeholder="Your Name"
@@ -71,16 +73,25 @@ const SignUp = () => {
                             />
 
                             {/* error for name */}
+
                             <label className="label">
-                                {errors.name?.type === 'required' && <span className="label-text-alt font-bold text-red-500">{errors.name.message}</span>}
+                                {
+                                    errors.name?.type === 'required'
+                                    &&
+                                    <span className="label-text-alt font-bold text-red-500">
+                                        {errors.name.message}
+                                    </span>
+                                }
                             </label>
                         </div>
 
                         {/* email input field */}
+
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
+
                             <input
                                 type="email"
                                 placeholder="Your Email"
@@ -98,17 +109,32 @@ const SignUp = () => {
                             />
 
                             {/* error for email */}
+
                             <label className="label">
-                                {errors.email?.type === 'required' && <span className="label-text-alt font-bold text-red-500">{errors.email.message}</span>}
-                                {errors.email?.type === 'pattern' && <span className="label-text-alt font-bold text-red-500">{errors.email.message}</span>}
+                                {
+                                    errors.email?.type === 'required'
+                                    &&
+                                    <span className="label-text-alt font-bold text-red-500">
+                                        {errors.email.message}
+                                    </span>
+                                }
+                                {
+                                    errors.email?.type === 'pattern'
+                                    &&
+                                    <span className="label-text-alt font-bold text-red-500">
+                                        {errors.email.message}
+                                    </span>
+                                }
                             </label>
                         </div>
 
                         {/* password input field */}
+
                         <div className="form-control w-full max-w-xs">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
+
                             <input
                                 type="password"
                                 placeholder="Your Password"
@@ -126,19 +152,45 @@ const SignUp = () => {
                             />
 
                             {/* error for password */}
+
                             <label className="label">
-                                {errors.password?.type === 'required' && <span className="label-text-alt font-bold text-red-500">{errors.password.message}</span>}
-                                {errors.password?.type === 'minLength' && <span className="label-text-alt font-bold text-red-500">{errors.password.message}</span>}
+                                {
+                                    errors.password?.type === 'required'
+                                    &&
+                                    <span className="label-text-alt font-bold text-red-500">
+                                        {errors.password.message}
+                                    </span>
+                                }
+                                {
+                                    errors.password?.type === 'minLength'
+                                    &&
+                                    <span className="label-text-alt font-bold text-red-500">
+                                        {errors.password.message}
+                                    </span>
+                                }
                             </label>
                         </div>
+
                         {/* showing errors */}
                         {signInError}
 
                         {/* signup button */}
-                        <input className="btn bg-green-600 w-full max-w-xs text-white" type="submit" value='Sign Up' />
+                        <input
+                            className="btn bg-green-600 w-full max-w-xs text-white"
+                            type="submit"
+                            value='Sign Up'
+                        />
+
                     </form>
 
-                    <p>Already have an account? <Link className='text-blue-600' to='/login'> Login</Link></p>
+                    <p>Already have an account?
+                        <Link
+                            className='text-blue-600'
+                            to='/login'
+                        >
+                            Login
+                        </Link>
+                    </p>
 
                     <div className="divider">OR</div>
 
@@ -146,7 +198,10 @@ const SignUp = () => {
                     <button
                         onClick={() => signInWithGoogle()}
                         className="btn bg-white text-blue-600"
-                    > <FcGoogle className='text-xl mr-4' /> Continue With Google</button>
+                    >
+                        <FcGoogle className='text-xl mr-4' />
+                        Continue With Google
+                    </button>
                 </div>
             </div>
         </div>

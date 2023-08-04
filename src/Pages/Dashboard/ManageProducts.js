@@ -19,6 +19,7 @@ const ManageProducts = () => {
     if (isLoading) {
         return <Loading></Loading>
     }
+
     return (
         <div>
             <h2 className='underline text-center text-2xl font-bold font-serif text-violet-500 mt-6 mb-3'>Manage Products</h2>
@@ -32,6 +33,7 @@ const ManageProducts = () => {
                             <th>Action</th>
                         </tr>
                     </thead>
+
                     <tbody>
                         {
                             parts.map((part, index) => <PartsRow
@@ -45,11 +47,13 @@ const ManageProducts = () => {
                     </tbody>
                 </table>
             </div>
+
             {deleteProduct && <PartsDeleteConfirm
                 deleteProduct={deleteProduct}
                 refetch={refetch}
                 setDeleteProduct={setDeleteProduct}
             ></PartsDeleteConfirm>}
+
         </div>
     );
 };

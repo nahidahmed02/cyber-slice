@@ -39,49 +39,95 @@ const AddProduct = () => {
                         <label className="label">
                             <span className="label-text">Parts Name</span>
                         </label>
-                        <input {...register("name")} type="text" placeholder='Parts Name' className='input input-bordered w-full  mx-auto' required />
+
+                        <input
+                            {...register("name")}
+                            type="text"
+                            placeholder='Parts Name'
+                            className='input input-bordered w-full  mx-auto'
+                            required
+                        />
                     </div>
 
                     <div className="form-control w-full max-w-xs mx-auto">
                         <label className="label">
                             <span className="label-text">Description</span>
                         </label>
-                        <textarea {...register("description")} type="text" placeholder="Description" className='input input-bordered w-full max-w-xs' required />
+
+                        <textarea
+                            {...register("description")}
+                            type="text"
+                            placeholder="Description"
+                            className='input input-bordered w-full max-w-xs'
+                            required
+                        />
                     </div>
 
                     <div className="form-control w-full max-w-xs mx-auto">
                         <label className="label">
                             <span className="label-text font-bold">Price</span>
                         </label>
-                        <input {...register("price")} type="number" placeholder="Price" className='input input-bordered w-full max-w-xs' required />
+
+                        <input
+                            {...register("price")}
+                            type="number"
+                            placeholder="Price"
+                            className='input input-bordered w-full max-w-xs'
+                            required
+                        />
                     </div>
 
                     <div className="form-control w-full max-w-xs mx-auto">
                         <label className="label">
                             <span className="label-text font-bold">Available Quantity</span>
                         </label>
-                        <input {...register("available")} type="number" placeholder="Available Quantity" className='input input-bordered w-full max-w-xs' required />
+
+                        <input
+                            {...register("available")}
+                            type="number"
+                            placeholder="Available Quantity"
+                            className='input input-bordered w-full max-w-xs'
+                            required
+                        />
                     </div>
 
                     <div className="form-control w-full max-w-xs mx-auto">
                         <label className="label">
                             <span className="label-text font-bold">Minimum Order</span>
                         </label>
-                        <input {...register("minOrder")} type="number" placeholder="Minimum Order" className='input input-bordered w-full max-w-xs' required />
+
+                        <input
+                            {...register("minOrder")}
+                            type="number"
+                            placeholder="Minimum Order"
+                            className='input input-bordered w-full max-w-xs'
+                            required
+                        />
                     </div>
 
                     <div className="form-control w-full max-w-xs mx-auto">
                         <label className="label">
                             <span className="label-text">Photo</span>
                         </label>
-                        <input {...register("photo")} type="text" placeholder="Photo URL" className="input input-bordered w-full max-w-xs" required />
+
+                        <input
+                            {...register("photo")}
+                            type="text"
+                            placeholder="Photo URL"
+                            className="input input-bordered w-full max-w-xs"
+                            required
+                        />
                     </div>
 
-                    <input type="submit" value="Add" className='btn btn-info btn-sm text-white font-bold w-full max-w-xs mt-4' />
+                    <input
+                        type="submit"
+                        value="Add"
+                        className='btn btn-info btn-sm text-white font-bold w-full max-w-xs mt-4'
+                    />
 
                 </form>
-            </div>
 
+            </div>
         </div>
     );
 };

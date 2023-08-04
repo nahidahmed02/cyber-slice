@@ -90,30 +90,35 @@ const Purchase = () => {
                                     <label className="label">
                                         <span className="label-text">Your Name</span>
                                     </label>
+
                                     <input
                                         {...register("name")}
                                         type="text"
                                         value={name}
                                         className='input input-bordered w-full max-w-xs'
-                                        readOnly />
+                                        readOnly
+                                    />
                                 </div>
 
                                 <div className="form-control w-full max-w-xs">
                                     <label className="label">
                                         <span className="label-text">Your Email</span>
                                     </label>
+
                                     <input
                                         {...register("email")}
                                         type="email"
                                         value={email}
                                         className='input input-bordered w-full max-w-xs'
-                                        readOnly />
+                                        readOnly
+                                    />
                                 </div>
 
                                 <div className="form-control w-full max-w-xs">
                                     <label className="label">
                                         <span className="label-text">Parts Name</span>
                                     </label>
+
                                     <input
                                         {...register("parts")}
                                         type="text"
@@ -129,6 +134,7 @@ const Purchase = () => {
                                     <label className="label">
                                         <span className="label-text font-bold">Quantity: Min {part.minOrder}, Max {part.available}</span>
                                     </label>
+
                                     <input
                                         {...register("quantity", { min: part.minOrder, max: part.available })}
                                         type="number"
@@ -138,23 +144,28 @@ const Purchase = () => {
                                         required
                                     />
 
-                                    {errors.quantity && errors.quantity.type === "min" && (
-                                        <span className='text-error font-bold italic'>
-                                            You can't order less than the minimum order quantity
-                                        </span>
-                                    )}
+                                    {
+                                        errors.quantity && errors.quantity.type === "min" && (
+                                            <span className='text-error font-bold italic'>
+                                                You can't order less than the minimum order quantity
+                                            </span>
+                                        )
+                                    }
 
-                                    {errors.quantity && errors.quantity.type === "max" && (
-                                        <span className='text-error font-bold italic'>
-                                            You can't order more than the available quantity
-                                        </span>
-                                    )}
+                                    {
+                                        errors.quantity && errors.quantity.type === "max" && (
+                                            <span className='text-error font-bold italic'>
+                                                You can't order more than the available quantity
+                                            </span>
+                                        )
+                                    }
                                 </div>
 
                                 <div className="form-control w-full max-w-xs">
                                     <label className="label">
                                         <span className="label-text">Your Address</span>
                                     </label>
+
                                     <input
                                         {...register("address")}
                                         type="text"
@@ -168,6 +179,7 @@ const Purchase = () => {
                                     <label className="label">
                                         <span className="label-text">Phone Number</span>
                                     </label>
+
                                     <input
                                         {...register("phone")}
                                         type="text"

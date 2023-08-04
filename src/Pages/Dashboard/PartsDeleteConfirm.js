@@ -23,14 +23,21 @@ const PartsDeleteConfirm = ({ deleteProduct, setDeleteProduct, refetch }) => {
 
     return (
         <div>
-
             <input type="checkbox" id="delete-confirm-modal" className="modal-toggle" />
+
             <div className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box">
+
                     <h3 className="font-bold text-lg text-red-500">Are you sure ?</h3>
                     <p>Due to security reasons, CONFIRM button is kept disabled.</p>
+
                     <div className="modal-action">
-                        <button onClick={() => handleDelete()} className="btn btn-xs btn-disabled text-white">Confirm</button>
+                        <button
+                            onClick={() => handleDelete()}
+                            className="btn btn-xs btn-disabled text-white">
+                            Confirm
+                        </button>
+
                         <label htmlFor="delete-confirm-modal" className="btn btn-xs">Cancel</label>
                     </div>
                 </div>

@@ -9,7 +9,7 @@ const Reviews = () => {
 
             <h2 className='text-center underline mb-6 text-3xl font-bold font-serif ' style={{ font: '#00214d' }}>Reviews</h2>
 
-            <div className='' style={{ 'overflowY': 'scroll', 'height': '280px' }}>
+            <div style={{ 'overflowY': 'scroll', 'height': '280px' }}>
                 <div className="overflow-x-auto">
 
                     <table className="table w-full">

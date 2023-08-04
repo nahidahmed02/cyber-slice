@@ -5,7 +5,11 @@ import notFound from '../../images/404.jpg';
 const NotFound = () => {
     return (
         <div className='text-center mx-20 my-6'>
-            <img className='lg:mx-32' src={notFound} alt="" />
+            <img
+                className='lg:mx-32'
+                src={notFound}
+                alt=""
+            />
         </div>
     );
 };
