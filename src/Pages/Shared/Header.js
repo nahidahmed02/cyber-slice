@@ -44,7 +44,7 @@ const Header = () => {
             {
                 user
                     ?
-                    <button onClick={logout} className="btn btn-ghost text-red-600 font-bold">Sign Out</button>
+                    <button onClick={logout} className="btn btn-ghost font-bold" style={{ color: '#00214d' }}>Sign Out</button>
                     :
                     <li><CustomLink to='/login'>Login</CustomLink></li>
             }
