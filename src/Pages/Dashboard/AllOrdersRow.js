@@ -5,10 +5,10 @@ const AllOrdersRow = ({ order, index }) => {
 
     return (
         <tr className='text-center'>
-            <th>{index + 1}</th>
-            <td>{email}</td>
-            <td>{parts}</td>
-            <td>{quantity}</td>
+            <th style={{ color: '#1b2d45', backgroundColor: '#fffffe' }}>{index + 1}</th>
+            <td style={{ color: '#1b2d45', backgroundColor: '#fffffe' }}>{email}</td>
+            <td style={{ color: '#1b2d45', backgroundColor: '#fffffe' }}>{parts}</td>
+            <td style={{ color: '#1b2d45', backgroundColor: '#fffffe' }}>{quantity}</td>
 
         </tr>
     );
