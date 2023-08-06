@@ -46,7 +46,7 @@ const SignUp = () => {
 
     return (
         <div className='flex my-14 justify-center items-center'>
-            <div className="card w-96 bg-sky-100 shadow-xl" style={{ backgroundColor: '#fffffe' }}>
+            <div className="card w-96 shadow-xl" style={{ backgroundColor: '#fffffe' }}>
                 <div className="card-body">
 
                     <h2 className="text-center font-serif text-2xl font-bold" style={{ font: '#00214d' }}>Sign Up</h2>
