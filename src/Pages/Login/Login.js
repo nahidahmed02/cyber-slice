@@ -54,10 +54,10 @@ const Login = () => {
 
     return (
         <div className='flex my-14 justify-center items-center'>
-            <div className="card bg-sky-100 shadow-xl">
+            <div className="card shadow-xl" style={{ backgroundColor: '#fffffe' }}>
                 <div className="card-body">
 
-                    <h2 className="text-center font-serif text-2xl text-amber-400 font-bold">Login</h2>
+                    <h2 className="text-center font-serif text-2xl font-bold" style={{ font: '#00214d' }}>Login</h2>
 
                     <form onSubmit={handleSubmit(onSubmit)}>
 
@@ -154,29 +154,31 @@ const Login = () => {
 
                         {/* login button */}
                         <input
-                            className="btn bg-green-600 w-full max-w-xs text-white"
+                            className="btn w-full max-w-xs "
+                            style={{ backgroundColor: '#00214d', color: 'white' }}
                             type="submit"
                             value='Login'
                         />
                     </form>
 
 
-                    <p>Don't have an account?
+                    <p className='text-sm'>Don't have an account?
                         <Link
-                            className='text-blue-600'
+                            className='text-blue-600 ml-1'
                             to='/signup'
                         >
                             Create a new account
                         </Link>
                     </p>
 
-                    <div className="divider">OR</div>
+                    <div className="divider text-xs">OR</div>
 
                     {/* google login button */}
 
                     <button
                         onClick={() => signInWithGoogle()}
-                        className="btn bg-white text-blue-600"
+                        className="btn bg-white hover:bg-white"
+                        style={{ color: '#00214d' }}
                     >
                         <FcGoogle className='text-xl mr-4' />
                         Continue With Google
