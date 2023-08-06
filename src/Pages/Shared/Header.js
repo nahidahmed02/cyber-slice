@@ -87,7 +87,7 @@ const Header = () => {
                     </ul>
                 </div>
 
-                <a className="cursor-pointer ml-20 text-2xl lg:text-3xl font-bold font-serif italic text-amber-500">
+                <a className="cursor-pointer ml-20 text-2xl lg:text-3xl font-bold font-serif italic" style={{ color: '#FFA500' }}>
                     Cyber<span className='text-red-500 ml-2'>  Slice</span>
                 </a>
 
