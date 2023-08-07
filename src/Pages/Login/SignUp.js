@@ -198,7 +198,7 @@ const SignUp = () => {
                     {/* google login button */}
                     <button
                         onClick={() => signInWithGoogle()}
-                        className="btn bg-white hover:bg-white"
+                        className="btn bg-white hover:bg-gray-200"
                         style={{ color: '#00214d' }}
                     >
                         <FcGoogle className='text-xl mr-4' />
