@@ -11,7 +11,11 @@ const Part = ({ part }) => {
     }
 
     return (
-        <div className="card lg:card-side shadow-xl grid lg:grid-cols-3 lg:pl-8" style={{ backgroundColor: '#fffffe' }}>
+        <div
+            data-aos="flip-up"
+            data-aos-easing="linear"
+            data-aos-duration="1500"
+            className="card lg:card-side shadow-xl grid lg:grid-cols-3 lg:pl-8" style={{ backgroundColor: '#fffffe' }}>
 
             <figure className='lg:col-span-1'>
                 <img src={photo} alt="" />

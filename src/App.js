@@ -21,8 +21,16 @@ import NotFound from './Pages/NotFound/NotFound';
 import Purchase from './Pages/Purchase/Purchase';
 import Footer from './Pages/Shared/Footer';
 import Header from './Pages/Shared/Header';
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function App() {
+
+  useEffect(() => {
+    AOS.init()
+  }, [])
+
   return (
     <div style={{ backgroundColor: '#f2f4f6' }}>
 
