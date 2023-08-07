@@ -13,7 +13,7 @@ const Campaign = () => {
 
                 <a
                     href="https://janegoodall.org/make-a-difference/janes-green-hope/"
-                    className='btn btn-warning text-white font-bold'
+                    className='btn btn-warning beating text-white font-bold'
                 >
                     Details
                 </a>
