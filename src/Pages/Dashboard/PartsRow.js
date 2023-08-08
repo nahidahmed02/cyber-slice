@@ -11,7 +11,7 @@ const PartsRow = ({ part, index, setDeleteProduct }) => {
                 <label
                     onClick={() => setDeleteProduct(part)}
                     htmlFor="delete-confirm-modal"
-                    className="btn btn-xs btn-error text-white">
+                    className="btn btn-xs btn-error text-white beating">
                     Delete
                 </label>
             </td>
