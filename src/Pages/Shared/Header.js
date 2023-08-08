@@ -10,6 +10,7 @@ import Loading from './Loading';
 const Header = () => {
 
     const [user, loading] = useAuthState(auth);
+
     if (loading) {
         return <Loading></Loading>
     }
@@ -87,8 +88,8 @@ const Header = () => {
                     </ul>
                 </div>
 
-                <a className="cursor-pointer ml-20 text-2xl lg:text-3xl font-bold font-serif italic" style={{ color: '#FFA500' }}>
-                    Cyber<span className='text-red-500 ml-2'>  Slice</span>
+                <a className="cursor-pointer flex ml-9 lg:ml-20 text-2xl lg:text-3xl font-bold font-serif italic" style={{ color: '#FFA500' }}>
+                    Cyber<span className='text-red-500 ml-3'>  Slice</span>
                 </a>
 
             </div>
