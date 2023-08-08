@@ -66,7 +66,7 @@ const MyProfile = () => {
             <h2 className='underline text-center text-2xl font-bold font-serif mt-6 mb-8' style={{ font: '#00214d' }}>{user.displayName}'s Profile</h2>
 
             <div className='lg:flex'>
-                <div className='mb-3 mx-6 lg:mx-10 px-6 lg:px-20 py-4 lg:py-10 rounded-lg hover:scale-110' style={{ backgroundColor: '#fffffe', color: '#1b2d45' }}>
+                <div className='mb-3 mx-6 lg:mx-10 px-8 lg:px-20 py-7 lg:py-10 rounded-lg hover:scale-110' style={{ backgroundColor: '#fffffe', color: '#1b2d45' }}>
                     <h2 className='mb-1'>
                         <span className='font-semibold'>Name:</span> {name}
                     </h2>
