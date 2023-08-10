@@ -56,11 +56,11 @@ const Header = () => {
             {
                 user
                     ?
-                    <li className='ml-24 lg:ml-3 font-bold italic'>
+                    <li className='ml-24 md:ml-48 lg:ml-3 font-bold italic'>
                         <FaUserCircle className='text-xl mr-2' /> {user.displayName}
                     </li>
                     :
-                    <li className='ml-24 lg:ml-3 font-bold italic'>
+                    <li className='ml-24 md:ml-48 lg:ml-3 font-bold italic'>
                         <FaUserCircle className='text-xl mr-2' /> Guest
                     </li>
             }
@@ -88,7 +88,7 @@ const Header = () => {
                     </ul>
                 </div>
 
-                <a className="cursor-pointer flex ml-9 lg:ml-20 text-2xl lg:text-3xl font-bold font-serif italic" style={{ color: '#FFA500' }}>
+                <a className="cursor-pointer flex ml-9 md:ml-52 lg:ml-20 text-2xl lg:text-3xl font-bold font-serif italic" style={{ color: '#FFA500' }}>
                     Cyber<span className='text-red-500 ml-3'>  Slice</span>
                 </a>
 

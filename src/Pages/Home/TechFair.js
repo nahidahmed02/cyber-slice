@@ -5,9 +5,9 @@ import './Style/TechFair.css'
 const TechFair = () => {
     return (
         <div
-            // data-aos="flip-up"
-            // data-aos-easing="linear"
-            // data-aos-duration="1500"
+            data-aos="flip-up"
+            data-aos-easing="linear"
+            data-aos-duration="1500"
             className='mx-4 lg:mx-20 my-10 p-6 flex items-center card-bordered bg-blue-600 rounded tech-div'>
 
             <div className='tech-title'>
