@@ -43,7 +43,7 @@
 @media only screen and (max-width: 688px) {
     .campaign {
         background-size: 100% 100%;
-        height: 35vh;
+        height: 40vh;
     }
 
     .campaign-title {
@@ -53,6 +53,26 @@
 
     .campaign-text {
         padding: 4px 12px;
-        font-size: 15px;
+        font-size: 14px;
+    }
+}
+
+
+/* Tablet Devices */
+
+@media screen and (max-width: 992px) and (min-width: 668px) {
+    .campaign {
+        background-size: 100% 100%;
+        height: 45vh;
+    }
+
+    .campaign-title {
+        padding: 6px 18px;
+        font-size: 28px;
+    }
+
+    .campaign-text {
+        padding: 8px 18px;
+        font-size: 16px;
     }
 }
