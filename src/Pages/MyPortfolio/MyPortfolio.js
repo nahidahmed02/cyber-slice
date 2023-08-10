@@ -6,9 +6,9 @@ const MyPortfolio = () => {
 
             <h2 className='text-center underline text-3xl font-bold font-serif my-6' style={{ font: '#00214d' }}>My Portfolio</h2>
 
-            <div className="card lg:mx-64 bg-neutral text-neutral-content">
+            <div className="card md:mx-36 lg:mx-64 bg-neutral text-neutral-content">
 
-                <div className="card-body px-4 lg:px-32">
+                <div className="card-body px-8 md:px-10 lg:px-32">
                     <h2>Name: Nahid Ahmed</h2>
                     <p>Email: ahmednahid1995@gmail.com</p>
                     <p>
