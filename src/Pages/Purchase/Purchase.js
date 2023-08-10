@@ -79,12 +79,12 @@ const Purchase = () => {
 
                 {/* form for placing the order */}
                 <div>
-                    <div className='card my-6 lg:my-0 shadow-2xl'>
+                    <div className='card my-6 md:my-10 lg:my-0 shadow-2xl'>
 
                         <div className='card-body'>
                             <h2 className='text-center my-4 text-3xl font-bold font-serif text-blue-500'>Place Order Form</h2>
 
-                            <form className='text-center lg:mx-32' onSubmit={handleSubmit(onSubmit)}>
+                            <form className='md:mx-44 lg:mx-32' onSubmit={handleSubmit(onSubmit)}>
 
                                 <div className="form-control w-full max-w-xs">
                                     <label className="label">
